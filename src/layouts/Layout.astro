@@ -9,7 +9,18 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<div style="width:100%; color:black; background:red; display:flex; gap:10px; justify-content:center;">
+			<a>Home</a>
+			<a>About</a>
+			<a>Contact</a>
+		</div>
+		
 		<slot />
+
+		<div style="width:100%; color:black; background:red; display:flex; justify-content:center;">
+			<span>this is where the footer will live</span>
+		</div>
+		
 	</body>
 </html>
 
