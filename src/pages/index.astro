@@ -2,6 +2,9 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import profilePicture from '../assets/TempProfilePic.png';
+import linkedInIcon from '../assets/linkedin.png';
+import githubIcon from '../assets/github.png';
+import tempDelveImage from '../assets/TempPicture.png';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -11,11 +14,32 @@ import profilePicture from '../assets/TempProfilePic.png';
 	<div style="height:100vh; justify-content:center; width:100%; background:lightblue; align-items:center; display:flex; flex-direction:column;">
 		<img style="border-radius:100px;" src={profilePicture.src} width="115" height="100" alt="Astro Homepage" />
 		<h1>Jordan King</h1>
-		<h2>Front-End Web Developer, Gamer, Adventurer</h2>
+		<p style="max-width:400px;">Front-End Web Developer building accessible, high-performance e-commerce experiences. Currently expanding into full-stack development, embedded systems, and Unreal Engine game development.</p>
+		
+		<div style="display:flex; gap:10px; justify-content:center;">
+			<a href="https://www.linkedin.com/in/jordan-king-b745751a3/" >
+				<img src={linkedInIcon.src} width="30" height="30" alt="LinkedIn" />
+			</a>
+			<a href="https://github.com/ArcaneShockTrooper">
+				<img src={githubIcon.src} width="30" height="30" alt="GitHub" />
+			</a>
+		</div>
 	</div>
 
-	<div>
+	<div style="padding:20px;">
 		<h2> Current Projects </h2>
+		<div style="padding:0px 40px; display:flex; flex-direction:row;">	
+			<div>	
+				<img style="height:200px; width:300px;" src={tempDelveImage.src} width="100" height="100" alt="Delve" />
+			</div>
+			<div style="margin-left: 20px;">	
+				<h2>Delve</h2>
+				<p> Dungeon delving first person co-op rpg </p>	
+			</div>
+		</div>
+		<div>
+			<a href="" style="background:black; color:white; padding:10px; border-radius:6px;">View All Projects</a>
+		</div>
 	</div>
 	
 </Layout>
