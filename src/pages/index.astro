@@ -5,24 +5,82 @@ import profilePicture from '../assets/TempProfilePic.png';
 import linkedInIcon from '../assets/linkedin.png';
 import githubIcon from '../assets/github.png';
 import tempDelveImage from '../assets/TempPicture.png';
+import emailIcon from '../assets/mail.png';
+import { CodeXml, ShoppingBag, Gamepad2, Cpu, MoveRight  } from "lucide-astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
+
+
 <Layout>
-	<div style="height:100vh; justify-content:center; width:100%; background:lightblue; align-items:center; display:flex; flex-direction:column;">
-		<img style="border-radius:100px;" src={profilePicture.src} width="115" height="100" alt="Astro Homepage" />
-		<h1>Jordan King</h1>
-		<p style="max-width:400px;">Front-End Web Developer building accessible, high-performance e-commerce experiences. Currently expanding into full-stack development, embedded systems, and Unreal Engine game development.</p>
+	<div style="padding:0px 40px; height:100vh; justify-content:center; width:100%; background:lightblue; align-items:start; display:flex; flex-direction:column;">
 		
-		<div style="display:flex; gap:10px; justify-content:center;">
-			<a href="https://www.linkedin.com/in/jordan-king-b745751a3/" >
-				<img src={linkedInIcon.src} width="30" height="30" alt="LinkedIn" />
-			</a>
+		<h2 style="margin:0px;">Hi, I'm</h2>
+		<h1 style="margin:0px;">Jordan King</h1>
+		<h2 style="margin:0px;">Developer. Problem Solver. Builder</h2>
+		<p style="max-width:400px;">Front-End Web Developer with experince building and maintaining e-commerce experinces. Passionate about clean code, performance, and creating things that matter</p>
+		
+		<div style="display:flex; gap:10px; justify-content:center;">	
+			<a style="background:black; color:white; padding:10px; border-radius:6px; text-decoration:none;`">View My Work</a>
+			<a style="background:black; color:white; padding:10px; border-radius:6px; text-decoration:none;`">About Me</a>
+		</div>
+
+		<div style="padding:20px 0px; display:flex; gap:20px; justify-content:center;">
 			<a href="https://github.com/ArcaneShockTrooper">
 				<img src={githubIcon.src} width="30" height="30" alt="GitHub" />
 			</a>
+			<a href="https://www.linkedin.com/in/jordan-king-b745751a3/" >
+				<img src={linkedInIcon.src} width="30" height="30" alt="LinkedIn" />
+			</a>
+			<a href="mailto:j0rdnk1ng2000@gmail.com">
+				<img src={emailIcon.src} width="30" height="30" alt="Email" />
+			</a>
+		</div>
+
+		<div style="display:flex; background:black; color:white; border-radius:6px; padding:20px 0px;">
+			
+			<div style="text-align:center; border-right: 2px solid white; padding:0px 20px;">
+				<CodeXml color="#8B5CF6" size={48} />
+				<h2 style="font-size: 20px;">Web Development</h2>
+				<p>Building fast, responsive, and accessible websites with modern technologies</p>
+			</div>
+
+			<div style="text-align:center; border-right: 2px solid white; padding:0px 20px;">
+				<ShoppingBag color="#10B981" size={48} />
+				<h2 style="font-size: 20px;">E-Commerce</h2>
+				<p>Experience with Shopify, custom apps, and complex storefront development</p>
+			</div>
+
+			<div style="text-align:center; border-right: 2px solid white; padding:0px 20px;">
+				<Gamepad2 color="#3B82F6" size={48} />
+				<h2 style="font-size: 20px;">Game Development</h2>
+				<p>Exploring Unreal Engine to bring interactive ideas and worlds to life</p>
+			</div>
+			
+			<div style="text-align:center; padding:0px 20px;">
+				<Cpu color="#F97316" size={48} />
+				<h2 style="font-size: 20px;"> Embedded Systems</h2>
+				<p>Learning C and embedded programming to build smart, efficient devices</p>
+			</div>
+	
+		</div>
+
+	</div>
+
+
+	<div style="width:100%; padding:20px;">
+		<div style="display:flex; flex-direction:column;">
+			<h2 style="font-size: 20px; margin:0px;">Featured Projects</h2>
+			<div style="display:flex; align-items:center; justify-content:space-between;">
+				<h3 style="font-size:30px; margin:0px;">Things I've Built</h3>
+				<a style="display:flex;">View all projects<MoveRight style="margin-left:10px;" color="#10B981" size={20} /></a>
+			</div>
+			
+		</div>
+		<div>
+
 		</div>
 	</div>
 
@@ -37,8 +95,8 @@ import tempDelveImage from '../assets/TempPicture.png';
 				<p> Dungeon delving first person co-op rpg </p>	
 			</div>
 		</div>
-		<div>
-			<a href="" style="background:black; color:white; padding:10px; border-radius:6px;">View All Projects</a>
+		<div style="width:fit-content; padding:10px; margin-top:20px;">
+			<a href="" style="text-decoration: none; padding:10px; background:black; color:white; border-radius:6px;">View All Projects</a>
 		</div>
 	</div>
 	
