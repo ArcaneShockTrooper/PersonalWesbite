@@ -6,6 +6,9 @@ import linkedInIcon from '../assets/linkedin.png';
 import githubIcon from '../assets/github.png';
 import tempDelveImage from '../assets/TempPicture.png';
 import emailIcon from '../assets/mail.png';
+import HanksBeltsPic from '../assets/HanksBelts_SS.png';
+import WoolxPic from '../assets/Woolx_SS.png';
+
 import { CodeXml, ShoppingBag, Gamepad2, Cpu, MoveRight  } from "lucide-astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -15,7 +18,7 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, MoveRight  } from "lucide-astro";
 
 
 <Layout>
-	<div style="padding:0px 40px; height:100vh; justify-content:center; width:100%; background:lightblue; align-items:start; display:flex; flex-direction:column;">
+	<div style="padding:0px 40px; height:100vh; justify-content:center; background:lightblue; align-items:start; display:flex; flex-direction:column;">
 		
 		<h2 style="margin:0px;">Hi, I'm</h2>
 		<h1 style="margin:0px;">Jordan King</h1>
@@ -70,7 +73,7 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, MoveRight  } from "lucide-astro";
 	</div>
 
 
-	<div style="width:100%; padding:20px;">
+	<div style=" padding:20px;">
 		<div style="display:flex; flex-direction:column;">
 			<h2 style="font-size: 20px; margin:0px;">Featured Projects</h2>
 			<div style="display:flex; align-items:center; justify-content:space-between;">
@@ -79,24 +82,44 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, MoveRight  } from "lucide-astro";
 			</div>
 			
 		</div>
-		<div>
-
-		</div>
-	</div>
-
-	<div style="padding:20px;">
-		<h2> Current Projects </h2>
-		<div style="padding:0px 40px; display:flex; flex-direction:row;">	
-			<div>	
-				<img style="height:200px; width:300px;" src={tempDelveImage.src} width="100" height="100" alt="Delve" />
+		<div style="display:flex; gap:10px; margin-top:20px;">
+			
+			<div style="width:33%;">
+				<div>
+					<img style="height:100%; width:100%;" src={HanksBeltsPic.src} width="100" height="100" alt="Hank's Belts" />
+				</div>
+				<div style="padding:10px;">
+					<span style="font-size: 12px; padding: 5px; border-radius: 6px; background: purple; color: white; margin-bottom: 10px;">E-COMMERCE</span>
+					<h2 style="margin:15px 0px 0px;">Hank's Belts</h2>
+					<p style="margin:10px 0px 20px 0px; font-size: 14px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
+					<p style="margin:0px; font-size: 12px;">Shopify * Liquid * JavaScript</p>
+				</div>
 			</div>
-			<div style="margin-left: 20px;">	
-				<h2>Delve</h2>
-				<p> Dungeon delving first person co-op rpg </p>	
+
+			<div style="width:33%;">
+				<div>
+					<img style="height:100%; width:100%;" src={WoolxPic.src} width="100" height="100" alt="Woolx" />
+				</div>
+				<div style="padding:10px;">
+					<span style="font-size: 12px; padding: 5px; border-radius: 6px; background: purple; color: white; margin-bottom: 10px;">E-COMMERCE</span>
+					<h2 style="margin:15px 0px 0px;">Woolx</h2>
+					<p style="margin:10px 0px 20px 0px; font-size: 14px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
+					<p style="margin:0px; font-size: 12px;">Shopify * Liquid * JavaScript</p>
+				</div>
 			</div>
-		</div>
-		<div style="width:fit-content; padding:10px; margin-top:20px;">
-			<a href="" style="text-decoration: none; padding:10px; background:black; color:white; border-radius:6px;">View All Projects</a>
+
+			<div style="width:33%;">
+				<div>
+					<img style="height:100%; width:100%;" src={tempDelveImage.src} width="100" height="100" alt="Delve" />
+				</div>
+				<div style="padding:10px;">
+					<span style="font-size: 12px; padding: 5px; border-radius: 6px; background: blue; color: white; margin-bottom: 10px;">Game Dev</span>
+					<h2 style="margin:15px 0px 0px;">Delve</h2>
+					<p style="margin:10px 0px 20px 0px; font-size: 14px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
+					<p style="margin:0px; font-size: 12px;">Unreal Engine 5 * Blueprints * C++</p>
+				</div>
+			</div>
+
 		</div>
 	</div>
 	
