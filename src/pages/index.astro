@@ -9,7 +9,7 @@ import emailIcon from '../assets/mail.png';
 import HanksBeltsPic from '../assets/HanksBelts_SS.png';
 import WoolxPic from '../assets/Woolx_SS.png';
 
-import { CodeXml, ShoppingBag, Gamepad2, Cpu, MoveRight  } from "lucide-astro";
+import { CodeXml, ShoppingBag, Gamepad2, Cpu, ArrowRight, User  } from "lucide-astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -21,13 +21,13 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, MoveRight  } from "lucide-astro";
 	<div style="padding:0px 40px; height:100vh; justify-content:center; background:lightblue; align-items:start; display:flex; flex-direction:column;">
 		
 		<h2 style="margin:0px;">Hi, I'm</h2>
-		<h1 style="margin:0px;">Jordan King</h1>
+		<h1 style="margin:0px; font-size:50px;">Jordan King</h1>
 		<h2 style="margin:0px;">Developer. Problem Solver. Builder</h2>
 		<p style="max-width:400px;">Front-End Web Developer with experince building and maintaining e-commerce experinces. Passionate about clean code, performance, and creating things that matter</p>
 		
-		<div style="display:flex; gap:10px; justify-content:center;">	
-			<a style="background:black; color:white; padding:10px; border-radius:6px; text-decoration:none;`">View My Work</a>
-			<a style="background:black; color:white; padding:10px; border-radius:6px; text-decoration:none;`">About Me</a>
+		<div style="display:flex; gap:20px; justify-content:center;">	
+			<a style="display:flex; align-items: center; background:black; color:white; padding:10px; border-radius:6px; text-decoration:none;`">View My Work<ArrowRight style="margin-left:10px;" color="white" size={20} /></a>
+			<a style="display:flex; align-items: center; background:black; color:white; padding:10px; border-radius:6px; text-decoration:none;`">About Me<User style="margin-left:10px;" color="white" size={20} /></a>
 		</div>
 
 		<div style="padding:20px 0px; display:flex; gap:20px; justify-content:center;">
@@ -78,7 +78,7 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, MoveRight  } from "lucide-astro";
 			<h2 style="font-size: 20px; margin:0px;">Featured Projects</h2>
 			<div style="display:flex; align-items:center; justify-content:space-between;">
 				<h3 style="font-size:30px; margin:0px;">Things I've Built</h3>
-				<a style="display:flex;">View all projects<MoveRight style="margin-left:10px;" color="#10B981" size={20} /></a>
+				<a style="display:flex;">View all projects<ArrowRight style="margin-left:10px;" color="#10B981" size={20} /></a>
 			</div>
 			
 		</div>
