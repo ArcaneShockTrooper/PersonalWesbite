@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+
+import { CodeXml, ShoppingBag, Gamepad2, Cpu } from "lucide-astro";
+---
+
+
+
+
+<Layout>
+    <main>
+        <div style="display:flex; padding:40px; background:black;">
+            <div>
+                <h2 style="margin: 0; color:white;">My Work</h2>
+                <h1 style="margin: 0; color:white;">Projects</h1>
+                <p style="margin: 0; color:white;"> A collection of projects I've built or contributed to. From web applications to game development and embedded systems.</p>
+            </div>
+            <div>
+                <CodeXml color="#8B5CF6" size={48} />
+                <ShoppingBag color="#10B981" size={48} />
+                <Gamepad2 color="#3B82F6" size={48} />
+                <Cpu color="#F97316" size={48} />
+            </div>
+        </div>
+    </main>
+</Layout>
