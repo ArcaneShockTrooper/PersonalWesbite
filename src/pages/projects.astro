@@ -10,6 +10,22 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, SquareArrowOutUpRight } from "luci
 ---
 
 
+<style>
+    button.active {
+        background:purple !important; 
+        padding:15px; 
+        border:none; 
+        border-radius:6px;
+    }
+
+    button {
+        background:none; 
+        padding:15px; 
+        border:none; 
+        border-radius:6px;
+    }
+</style>
+
 
 
 <Layout>
@@ -46,9 +62,9 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, SquareArrowOutUpRight } from "luci
     </main>
     <div style="padding:0px 40px; background:#01040d;">
         <div style="padding:20px 0px; border-top:1px solid grey;">
-            <button id="all-projects" style="background:purple; padding:15px; border:none; border-radius:6px; color:white;">All Projects</button>
-            <button id="e-commerce" style="padding:20px; border:none; background:none; color:white;">E-Commerce</button>
-            <button id="game-development" style="padding:20px; border:none; background:none; color:white;">Game Development</button>
+            <button id="all-projects" class="active" style="cursor:pointer; color:white;">All Projects</button>
+            <button id="e-commerce" style="cursor:pointer; color:white;">E-Commerce</button>
+            <button id="game-development" style="cursor:pointer; color:white;">Game Development</button>
         </div>
 
         <!-- All Projects list -->
@@ -107,8 +123,8 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, SquareArrowOutUpRight } from "luci
                     <div style="width:70%; padding:0px 20px;">
                         <span style="font-size: 12px; padding: 5px; border-radius: 6px; background: blue; color: white; margin-bottom: 10px;">Game Development</span>
                         <h2 style="color:white; margin:15px 0px 0px;">Delve</h2>
-                        <p style="color:white; margin-top:10px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
-                        <p style="color:white; margin-top:40px; font-size: 12px;">Shopify &#8226; Liquid &#8226; JavaScript</p>
+                        <p style="color:white; margin-top:10px;">A Multiplayer Dungeon Crawler game</p>
+                        <p style="color:white; margin-top:40px; font-size: 12px;">Unreal Engine 5 &#8226; Blueprints &#8226; C++</p>
                     </div>
                 </div>
 
@@ -138,16 +154,25 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, SquareArrowOutUpRight } from "luci
         const gameDevelopmentProjects = document.querySelectorAll('#gameDevelopmentProject');
         
         allProjectsButton.addEventListener('click', function() {
+            allProjectsButton.classList.add('active');
+            eCommerceButton.classList.remove('active');
+            gameDevelopmentButton.classList.remove('active');
             // Logic to show all projects
             ecommerceProjects.forEach(project => project.style.display = 'flex');
             gameDevelopmentProjects.forEach(project => project.style.display = 'flex');
         });
         eCommerceButton.addEventListener('click', function() {
+            allProjectsButton.classList.remove('active');
+            eCommerceButton.classList.add('active');
+            gameDevelopmentButton.classList.remove('active');
             // Logic to show e-commerce projects
             ecommerceProjects.forEach(project => project.style.display = 'flex');
             gameDevelopmentProjects.forEach(project => project.style.display = 'none');
         });
         gameDevelopmentButton.addEventListener('click', function() {
+            allProjectsButton.classList.remove('active');
+            eCommerceButton.classList.remove('active');
+            gameDevelopmentButton.classList.add('active');
             // Logic to show game development projects
             ecommerceProjects.forEach(project => project.style.display = 'none');
             gameDevelopmentProjects.forEach(project => project.style.display = 'flex');
