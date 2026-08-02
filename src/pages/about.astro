@@ -2,13 +2,23 @@
 import Layout from '../layouts/Layout.astro';
 
 import TempProfilePic from '../assets/TempProfilePic.png';
+import HTML_Pic from '../assets/html.png';
+import CSS_Pic from '../assets/css_blue.png';
+import Liquid_Pic from '../assets/liquid.png';
+import SQL_Pic from '../assets/sql.png';
+import Git_Pic from '../assets/git.png';
+import Js_Pic from '../assets/js.png';
+import UE_Pic from '../assets/Unreal engine Logo.png';
+import Cpp_Pic from '../assets/c++.png';
+import Rust_Pic from '../assets/rust.png';
+import RTF_Pic from '../assets/rtf.png';
 
-import { Mail, Calendar, MapPinHouse, ArrowRight, CodeXml, Lightbulb, Rocket, Gamepad2, ShoppingBag, Cpu } from "lucide-astro";
+import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, Rocket, Gamepad2, Trophy, User, ShoppingBag, Cpu } from "lucide-astro";
 ---
 
 <Layout>
-   <div style=" justify-content: space-between; background-color: #01040d; display: flex; gap: 40px; padding: 20px;">
-        <div style="padding: 0px 40px;">
+   <div style=" padding:40px; justify-content: space-between; background-color: #01040d; display: flex; gap: 40px;">
+        <div>
             <h1 style="color:purple; font-size: 25px; margin:0px;">About Me</h1>
             <h2 style="color: #fff; margin:0px; font-size:50px;">Hi, I'm Jordan</h2>
             <h2 style="color: purple; margin-top:10px;">Developer. Problem Solver. Builder</h2>
@@ -46,12 +56,12 @@ import { Mail, Calendar, MapPinHouse, ArrowRight, CodeXml, Lightbulb, Rocket, Ga
         </div>
    </div>
 
-   <div style="display: flex; background-color: #01040d; padding: 20px;">
+   <div style="padding: 40px; display: flex; justify-content: space-between; background-color: #01040d;">
         <div>
             <h1 style="margin:0px; font-size:14px; color: purple;">MY STORY</h1>
             <h2 style="margin-top:10px;  color: #fff;"> A little about me. </h2>
-            <p style="margin-top:20px; font-size: 12px; color: #fff;"> I've always been curious about how things work. That curiosity led me to coding, where I found the perfect mix of creativity and logic. Over the years , I've worked on a variety of projects-- from web applications to embedded systems and game development.</p>
-            <p style="margin:0px; font-size: 12px; color: #fff;"> When I'm not coding, you can find me exploring new technologies, hiking, or working on personal projects.</p>
+            <p style="max-width:400px; margin-top:20px; font-size: 12px; color: #fff;"> I've always been curious about how things work. That curiosity led me to coding, where I found the perfect mix of creativity and logic. Over the years , I've worked on a variety of projects-- from web applications to embedded systems and game development.</p>
+            <p style="max-width:400px; margin:0px; font-size: 12px; color: #fff;"> When I'm not coding, you can find me exploring new technologies, hiking, or working on personal projects.</p>
             <div style="margin-top:20px;">
                 <div style="display:flex;">
                     <div style="background-color: #0A101B; padding:10px; margin-right: 10px; border-radius: 6px;">
@@ -85,7 +95,7 @@ import { Mail, Calendar, MapPinHouse, ArrowRight, CodeXml, Lightbulb, Rocket, Ga
 
             </div>
         </div>
-        <div style="padding:20px; background-color: #0A101B; border-radius: 6px; display:flex; flex-direction: column;">
+        <div style="padding:20px; max-width:400px; background-color: #0A101B; border-radius: 6px; display:flex; flex-direction: column;">
             <h2 style="margin-bottom: 20px; margin-top: 0px; color: #fff;"> What I Do </h2>
             <div>
                 <div style="display:flex;">
@@ -135,15 +145,135 @@ import { Mail, Calendar, MapPinHouse, ArrowRight, CodeXml, Lightbulb, Rocket, Ga
             </div>
         </div>
 
-        <div>
-            <span>TECHNOLOGIES I WORK WITH</span>
-            <div>
+        
+   </div>
+   <div style=" padding:20px 40px; background-color: #01040d;">
+        <div style="border-radius:6px; padding:20px; background-color: #0A101B;">
+            <span style="color:purple;">TECHNOLOGIES I WORK WITH</span>
+            <div style="gap:40px; display:flex; flex-direction: row; padding:20px 10px;">
+                
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div>
+                         <img src={HTML_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
+                    </div>
+                    <span style="margin-top:10px; color: #fff;"> HTML </span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div>
+                         <img src={CSS_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
+                    </div>
+                    <span style="margin-top:10px; color: #fff;"> CSS </span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div style="background-color: white;">
+                         <img src={Liquid_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
+                    </div>
+                    <span style="margin-top:10px; color: #fff;"> Liquid </span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div>
+                         <img src={Js_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
+                    </div>
+                    <span style="margin-top:10px; color: #fff;"> JavaScript </span>
+                </div>
+
+                 <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div style="">
+                         <img src={SQL_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
+                    </div>
+                    <span style="margin-top:10px; color: #fff;"> SQL </span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div>
+                         <img src={Git_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
+                    </div>
+                    <span style=" margin-top:10px; color: #fff;"> Git </span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div>
+                         <img src={UE_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
+                    </div>
+                    <span style=" margin-top:10px; color: #fff;"> Unreal Engine </span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div>
+                         <img src={Cpp_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
+                    </div>
+                    <span style=" margin-top:10px; color: #fff;"> C++ </span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div>
+                         <img src={Rust_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
+                    </div>
+                    <span style=" margin-top:10px; color: #fff;"> Rust </span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div>
+                         <img src={RTF_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
+                    </div>
+                    <span style=" margin-top:10px; color: #fff;"> RTF </span>
+                </div>
+                
+            </div>  
+        </div>
+    </div>  
+   
+   <div style="padding:20px 40px; background-color: #01040d;">
+        <div style="gap:30px; justify-content: space-between; display:flex; border-radius:6px; padding:20px; background-color: #0A101B;">
             
-            </div>   
+            <div style="display:flex;">
+                <Folder style="color:purple; margin-right: 10px;" size={40} />
+                <div style="display:flex; flex-direction: column;">
+                    <span style="font-size: 24px; color:white;">20+</span>
+                    <span style="color:white;">Projects Completed</span>
+                </div>
+            </div>
+            
+            <div style="display:flex;">
+                <User style="color:purple; margin-right: 10px;" size={40} />
+                <div style="display:flex; flex-direction: column;">
+                    <span style="font-size: 24px; color:white;">3+</span>
+                    <span style="color:white;">Years of Experience</span>
+                </div>
+            </div>
+
+            <div style="display:flex;">
+                <CodeXml style="color:purple; margin-right: 10px;" size={40} />
+                <div style="display:flex; flex-direction: column;">
+                    <span style="font-size: 24px; color:white;">10+</span>
+                    <span style="color:white;">Technologies</span>
+                </div>
+            </div>
+
+            <div style="display:flex;">
+                <Trophy style="color:purple; margin-right: 10px;" size={40} />
+                <div style="display:flex; flex-direction: column;">
+                    <span style="font-size: 24px; color:white;">100%</span>
+                    <span style="color:white;">Passion</span>
+                </div>
+            </div>
         </div>
    </div>
    
-   
-   <div></div>
-   <div></div>
+   <div style="padding:10px 40px; background-color: #01040d;">
+        <div style="justify-content: space-between; display:flex; border-radius: 6px; padding:20px; background-color: #0A101B;">
+            <div style="display:flex; ">
+                <Rocket color="#8B5CF6" size={40} />
+                <div style="margin-left: 20px; display:flex; flex-direction: column;">
+                    <span style="font-size: 18px; margin-bottom: 10px; color:white;">Let's build something amazing together.</span>
+                    <span style="font-size: 14px; color:white;">I'm always open to new opportunities and interesting projects.</span>
+                </div>
+            </div>
+           
+            <a href="http://localhost:4321/projects" style="text-decoration: none; display:flex; align-items: center; background:purple; color:white; padding:10px; border-radius:6px; text-decoration:none;`">Get In Touch<ArrowRight style="margin-left:10px;" color="white" size={20} /></a>
+        </div>
+   </div>
 </Layout>
