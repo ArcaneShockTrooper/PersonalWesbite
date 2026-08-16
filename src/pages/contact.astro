@@ -12,32 +12,81 @@ import UE_Pic from '../assets/Unreal engine Logo.png';
 import Cpp_Pic from '../assets/c++.png';
 import Rust_Pic from '../assets/rust.png';
 import RTF_Pic from '../assets/rtf.png';
+import linkedInIcon from '../assets/linkedin.png';
+import githubIcon from '../assets/github.png';
 
-import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, Rocket, Gamepad2, Trophy, User, ShoppingBag, Cpu } from "lucide-astro";
+import { Mail, Calendar, CircleCheck, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, Rocket, Gamepad2, Trophy, User, ShoppingBag, Cpu } from "lucide-astro";
 ---
 
 <Layout>
-<div style="padding:40px; background-color: #01040d; display:flex; flex-direction:column; justify-content:center; align-items:center; ">
+<div style="padding:40px 40px 0 40px; background-color: #01040d; display:flex; flex-direction:column; justify-content:center; align-items:center; ">
     <h1 style="margin-top: 0px; font-size:20px; margin-bottom: 0px; color: #8B5CF6;">CONTACT</h1>
-    <h2 style="color: white; font-size:40px; margin:15px;">Let's Work Together!</h2>
+    <h2 style="color: white; font-size:40px; margin:15px;">Let's Work Together.</h2>
     <p style="color: white; max-width:340px; text-align:center; line-height:30px;  margin:0px;">Have a project, opportunity you'd like to discuss? I'd love to hear from you!</p>
 </div>
-<div style="display:flex; gap:20px; padding: 40px; background-color: #01040d;">
-    <div style="border:2px solid #8B5CF6; border-radius: 6px; max-width: 200px; margin: auto; display:flex; flex-direction:column; justify-content:center; align-items:center; padding: 40px;">
-        <Mail style="padding:12px; border:2px solid white; border-radius:40px; color:#8B5CF6; " size={40} />
+<div style="justify-content:center; display:flex; gap:20px; padding: 40px; background-color: #01040d;">
+    <div style="background-color: #0A101B; min-height: fit-content; border:2px solid #8B5CF6; border-radius: 6px; max-width: 200px; display:flex; flex-direction:column; align-items:center; padding: 40px;">
+        <div style="display:flex; padding:12px; border:2px solid white; border-radius:40px;">
+            <Mail style="color:#8B5CF6; " size={40} />
+        </div>
         <h1 style="font-size:20px; color:white;">Email</h1>
-        <h2 style="margin:0px; font-size:20px; color:white;">j0rdnk1ng2000@gmail.com</h2>
         <p style="line-height: 25px; color:white; text-align: center; max-width:200px;">The best way to reach me for professional opportunities.</p>
         <a href="mailto:j0rdnk1ng2000@gmail.com" style="padding:15px; border-radius: 6px; background: #8B5CF6; color: white; text-decoration: none;">Send Me an Email</a>
     </div>
     
-    <div style="border:2px solid #8B5CF6; border-radius: 6px; max-width: 200px; margin: auto; display:flex; flex-direction:column; justify-content:center; align-items:center; padding: 40px;">
-        <Mail style="padding:12px; border:2px solid white; border-radius:40px; color:#8B5CF6; " size={40} />
+    <div style="background-color: #0A101B; min-height: fit-content; border:2px solid #3b82f6; border-radius: 6px; max-width: 200px;  display:flex; flex-direction:column; align-items:center; padding: 40px;">
+        <div style="display:flex; padding:12px; border:2px solid white; border-radius:40px;">
+            <img src={linkedInIcon.src} width="40" height="40" alt="LinkedIn" />
+        </div>
         <h1 style="font-size:20px; color:white;">LINKEDIN</h1>
-        <h2 style="margin:0px; font-size:20px; color:white;">CONNECT ON LINKEDIN</h2>
-        <p style="line-height: 25px; color:white; text-align: center; max-width:200px;">view my professional experience and connect with me.</p>
-        <a href="mailto:j0rdnk1ng2000@gmail.com" style="padding:15px; border-radius: 6px; background: #8B5CF6; color: white; text-decoration: none;">view linkedin</a>
+        <p style="line-height: 25px; color:white; text-align: center; text-align:center; max-width:200px;">view my experience and connect with me.</p>
+        <a href="https://www.linkedin.com/in/jordan-king-b745751a3/" style="padding:15px; border-radius: 6px; background: #8B5CF6; color: white; text-decoration: none;">View Linkedin</a>
     </div>
-    <div></div>
+    
+    <div style="background-color: #0A101B; min-height: fit-content; border:2px solid rgb(16, 185, 129); border-radius: 6px; max-width: 200px;  display:flex; flex-direction:column; align-items:center; padding: 40px;">
+        <div style="display:flex; padding:12px; border:2px solid white; border-radius:40px;">
+            <img src={githubIcon.src} width="40" height="40" alt="GitHub" />
+        </div>
+        <h1 style="font-size:20px; color:white;">GITHUB</h1>
+        <p style="line-height: 25px; color:white; text-align: center; text-align:center; max-width:200px;">view my coding projects and contributions.</p>
+        <a href="https://github.com/ArcaneShockTrooper?tab=repositories" style="padding:15px; border-radius: 6px; background: #8B5CF6; color: white; text-decoration: none;">View GitHub</a>
+    </div>
+</div>
+<div style="justify-items:center; padding:40px; background-color: #01040d;">
+    <div style="width:fit-content; border:2px solid grey; border-radius: 12px; padding:40px; display:flex; justify-content:center; gap:20px; background-color: #0A101B;">
+        <div>
+            <div style="display:flex; align-items:center; gap:10px;">
+                <div style="background-color:green; width:10px; height:10px; border-radius:20px; border:2px solid lightgreen;"></div>
+                <h1 style="color: white; font-size:20px;">Currently Available</h1>
+            </div>
+            <p style="width:230px; color: white;">I'm open to new opportunities and exciting projects!</p>
+        </div>
+        <div style="border-left:2px solid grey; padding-left:20px;">
+            <h2 style="color: white; font-size:20px;">I'm Interested In:</h2>
+            <div style=" display:flex; max-height:100px; flex-direction: column; gap:20px; flex-wrap:wrap;">
+                <div style="height:20px; display:flex; align-items:center; gap:10px;">
+                    <CircleCheck color="#8B5CF6" size={20} />
+                    <p style="color: white;">Frontend Development</p>
+                </div>
+                <div style="height:20px; display:flex; align-items:center; gap:10px;">
+                    <CircleCheck color="#8B5CF6" size={20} />
+                    <p style="color: white;">Backend Development</p>
+                </div>
+                <div style="height:20px; display:flex; align-items:center; gap:10px;">
+                    <CircleCheck color="#8B5CF6" size={20} />
+                    <p style="color: white;">Game Development</p>
+                </div>
+                <div style="height:20px;display:flex; align-items:center; gap:10px;">
+                    <CircleCheck color="#8B5CF6" size={20} />
+                    <p style="color: white;">E-commerce Solutions</p>
+                </div>
+                <div style="height:20px;display:flex; align-items:center; gap:10px;">
+                    <CircleCheck color="#8B5CF6" size={20} />
+                    <p style="color: white;">Performance Optimization</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 </div>
 </Layout>
