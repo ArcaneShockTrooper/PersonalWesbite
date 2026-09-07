@@ -2,6 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 
 import TempProfilePic from '../assets/TempProfilePic.png';
+import HanksCollectionPic from '../assets/HanksCollection.png';
+import HanksHomepagePic from '../assets/HanksHompage.png';
+import HanksJournalPic from '../assets/HanksJournal.png';
+import HanksPDPPic from '../assets/HanksPDP.png';
 import HTML_Pic from '../assets/html.png';
 import CSS_Pic from '../assets/css_blue.png';
 import Liquid_Pic from '../assets/liquid.png';
@@ -15,13 +19,204 @@ import RTF_Pic from '../assets/rtf.png';
 import linkedInIcon from '../assets/linkedin.png';
 import githubIcon from '../assets/github.png';
 
-import { Mail, Calendar, CircleCheck, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, Rocket, Gamepad2, Trophy, User, ShoppingBag, Cpu } from "lucide-astro";
+import { Mail, Image, FileText, Star, Calendar, CircleCheck, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, Rocket, Gamepad2, Trophy, User, ShoppingBag, Cpu } from "lucide-astro";
 ---
 
 <Layout>
-    <div>
-         <h1 style="color:#8B5CF6; font-size: 25px; margin:0px;">E-COMMERCE</h1>
-         <h2 style="color:white; margin:0px; margin-top:5px; font-size:50px;">Hank's Belts</h2>
-         <p style="color:white; max-width:400px;">Front-End Web Developer with experince building and maintaining e-commerce experinces. Passionate about clean code, performance, and creating things that matter</p>
+    <div style=" background:#01040d; display:flex;">
+        <div style="padding:40px; background:#01040d;">
+            <h2 style="color:#8B5CF6; font-size: 25px; margin:0px;">E-COMMERCE</h2>
+            <h1 style="color:white; margin:0px; margin-top:5px; font-size:50px;">Hank's Belts</h1>
+            <p style="color:white; max-width:400px;">Front-End Web Developer with experince building and maintaining e-commerce experinces. Passionate about clean code, performance, and creating things that matter</p>
+            <div>
+                <a href="https://hanksbelts.com/" target="_blank" style="text-decoration:none; color:white; background:#8B5CF6; padding:10px 20px; border-radius:5px; margin-top:20px; display:inline-block;">Visit Site</a>
+
+            </div>
+        </div>
+        <div>
+            <span>Image</span>
+        </div>
+    </div>
+
+    <div style="background:#01040d;">
+        <div style="display:flex;  padding:40px;">
+            <div style="display:flex; border-radius:6px; background: #0A101B;">
+                <div style="margin:20px; border-right:2px solid #0f1828; max-width:50%;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <FileText style="color:#8B5CF6; " size={40} />
+                        <h2 style="color:white;">About The Project</h2>
+                    </div>
+                    
+
+                    <p style="margin-right:10px; line-height:25px; color:white;">HanksBelts is a shopift storefont built for a leather goods brand focused on quality and craftmanship. The goal was to create a clean, modern, and easy-to-use shopping experince tat highlights the product and brand story.</p>
+                    <p style="line-height:25px; color:white;">I customized the the theme using Liquid, HTML, SCSS and JavaScript to build reusable sections, improve performance, and create a seamless experince across all devices.</p>
+                </div>
+                <div style=" padding:20px; width:50%;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <CodeXml style="color:#8B5CF6; " size={40} />
+                        <h2 style="color:white;">Technologies Used</h2>
+                    </div>
+                    <div style="display:flex; margin-bottom:20px; gap:10px; flex-wrap:wrap;">
+                        <div style="height:20px; padding:10px; border-radius: 6px; background:#0f1828; color:white;">Shopify</div>
+                        <div style="height:20px; padding:10px; border-radius: 6px; background:#0f1828; color:white;">Liquid</div>
+                        <div style="height:20px; padding:10px; border-radius: 6px; background:#0f1828; color:white;">HTML</div>
+                        <div style="height:20px; padding:10px; border-radius: 6px; background:#0f1828; color:white;">SCSS</div>
+                        <div style="height:20px; padding:10px; border-radius: 6px; background:#0f1828; color:white;">JavaScript</div>
+                        <div style="height:20px; padding:10px; border-radius: 6px; background:#0f1828; color:white;">Git</div>
+                    </div>
+
+                    <div style="border-top:2px solid #0f1828; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                        <Star  style="color:#8B5CF6; " size={30} />
+                        <h2 style="color:white;">Key Features</h2>
+                    </div>
+                    
+                    <div>
+                        <div style="display:grid; grid-template-columns: repeat(2, 1fr); flex-wrap: wrap; gap:10px;">
+                            <div style="height:40px; display:flex; align-items:center; gap:10px;">
+                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <h3 style="font-size:16px; color:white;">Custom Theme Design</h3>
+                            </div>
+
+                            <div style="height:40px; display:flex; align-items:center; gap:10px;">
+                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <h3 style="font-size:16px; color:white;">Responsive Design For All Devices</h3>
+                            </div>
+
+                            <div style="height:40px; display:flex; align-items:center; gap:10px;">
+                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <h3 style="font-size:16px; color:white;">Product Filtering And Collections</h3>
+                            </div>
+
+                            <div style="height:40px; display:flex; align-items:center; gap:10px;">
+                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <h3 style="font-size:16px; color:white;">Optimized Performance And Loading</h3>
+                            </div>
+
+                            <div style="height:40px;  display:flex; align-items:center; gap:10px;">
+                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <h3 style="font-size:16px; color:white;">Custom Product Page Sections</h3>
+                            </div>
+
+                            <div style="height:40px;  display:flex; align-items:center; gap:10px;">
+                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <h3 style="font-size:16px; color:white;">Integrated Reviews and Testimonials</h3>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style=" padding: 0px 40px 40px 40px; background:#01040d;">
+        <div style="border-radius:6px; background: #0A101B; padding:40px;">
+            <div style="gap:15px; display:flex; align-items:center; margin-bottom: 15px;">
+                <Image style="color:#8B5CF6; " size={30} />
+                <span style="color:white;">Project Gallery</span>
+            </div>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
+
+                <div class="carousel-track">
+                    <img class="carousel-img" src={HanksCollectionPic.src} alt="Collection page" />
+                    <img class="carousel-img" src={HanksHomepagePic.src} alt="Homepage" />
+                    <img class="carousel-img" src={HanksJournalPic.src} alt="Journal page" />
+                    <img class="carousel-img" src={HanksPDPPic.src} alt="Product detail page" />
+                </div>
+
+                <button class="carousel-btn next" aria-label="Next">&#10095;</button>
+            </div>
+        </div>
     </div>
 </Layout>
+
+<style>
+    .carousel-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding: 4px;
+        /* hide scrollbar */
+        scrollbar-width: none;
+    }
+    .carousel-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel-img {
+        flex: 0 0 auto;
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 2px solid purple;
+        scroll-snap-align: start;
+    }
+
+    .carousel-btn {
+        flex-shrink: 0;
+        background: rgba(139, 92, 246, 0.8);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        font-size: 14px;
+        z-index: 1;
+    }
+    .carousel-btn:hover {
+        background: #8B5CF6;
+    }
+    .carousel-btn.is-hidden {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+</style>
+
+<script>
+    const wrapper = document.querySelector('.carousel-wrapper');
+    const track = wrapper?.querySelector('.carousel-track') as HTMLElement;
+    const prevBtn = wrapper?.querySelector('.carousel-btn.prev') as HTMLElement;
+    const nextBtn = wrapper?.querySelector('.carousel-btn.next') as HTMLElement;
+
+    const scrollAmount = 320; // image width + gap
+    const tolerance = 5; // px buffer to avoid rounding issues
+
+    function updateButtons() {
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const { scrollLeft, scrollWidth, clientWidth } = track;
+
+        const atStart = scrollLeft <= tolerance;
+        const atEnd = scrollLeft + clientWidth >= scrollWidth - tolerance;
+        prevBtn.classList.toggle('is-hidden', atStart);
+        nextBtn.classList.toggle('is-hidden', atEnd);
+    }
+
+    prevBtn?.addEventListener('click', () => {
+        track?.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    nextBtn?.addEventListener('click', () => {
+        track?.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    track?.addEventListener('scroll', updateButtons);
+    window.addEventListener('resize', updateButtons);
+
+    // run once after images/layout settle
+    window.addEventListener('load', updateButtons);
+    updateButtons();
+</script>
