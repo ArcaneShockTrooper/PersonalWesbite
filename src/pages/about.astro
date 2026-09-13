@@ -147,82 +147,77 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
 
         
    </div>
-   <div style=" padding:20px 40px; background-color: #01040d;">
-        <div style="border-radius:6px; padding:20px; background-color: #0A101B;">
-            <span style="color:#8B5CF6;">TECHNOLOGIES I WORK WITH</span>
-            <div style="gap:40px; display:flex; flex-direction: row; padding:20px 10px;">
-                
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div>
-                         <img src={HTML_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
+   <div class="technologies-section">
+        <div class="technologies-container">
+
+            <span class="technologies-title">TECHNOLOGIES I WORK WITH</span>
+
+            <div class="carousel-wrapper">
+
+                <button class="carousel-button left" id="tech-left" aria-label="Previous technologies">
+                    &#10094;
+                </button>
+
+                <div class="technology-carousel" id="technology-carousel">
+
+                    <div class="technology-card">
+                        <img src={HTML_Pic.src} alt="HTML" />
+                        <span>HTML</span>
                     </div>
-                    <span style="margin-top:10px; color: #fff;"> HTML </span>
+
+                    <div class="technology-card">
+                        <img src={CSS_Pic.src} alt="CSS" />
+                        <span>CSS</span>
+                    </div>
+
+                    <div class="technology-card liquid">
+                        <img src={Liquid_Pic.src} alt="Liquid" />
+                        <span style="color: #fff;">Liquid</span>
+                    </div>
+
+                    <div class="technology-card">
+                        <img src={Js_Pic.src} alt="JavaScript" />
+                        <span>JavaScript</span>
+                    </div>
+
+                    <div class="technology-card">
+                        <img src={SQL_Pic.src} alt="SQL" />
+                        <span>SQL</span>
+                    </div>
+
+                    <div class="technology-card">
+                        <img src={Git_Pic.src} alt="Git" />
+                        <span>Git</span>
+                    </div>
+
+                    <div class="technology-card">
+                        <img src={UE_Pic.src} alt="Unreal Engine" />
+                        <span>Unreal Engine</span>
+                    </div>
+
+                    <div class="technology-card">
+                        <img src={Cpp_Pic.src} alt="C++" />
+                        <span>C++</span>
+                    </div>
+
+                    <div class="technology-card">
+                        <img src={Rust_Pic.src} alt="Rust" />
+                        <span>Rust</span>
+                    </div>
+
+                    <div class="technology-card">
+                        <img src={RTF_Pic.src} alt="RTF" />
+                        <span>RTF</span>
+                    </div>
+
                 </div>
 
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div>
-                         <img src={CSS_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
-                    </div>
-                    <span style="margin-top:10px; color: #fff;"> CSS </span>
-                </div>
+                <button class="carousel-button right" id="tech-right" aria-label="Next technologies">
+                    &#10095;
+                </button>
 
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div style="background-color: white;">
-                         <img src={Liquid_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
-                    </div>
-                    <span style="margin-top:10px; color: #fff;"> Liquid </span>
-                </div>
+            </div>
 
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div>
-                         <img src={Js_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
-                    </div>
-                    <span style="margin-top:10px; color: #fff;"> JavaScript </span>
-                </div>
-
-                 <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div style="">
-                         <img src={SQL_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
-                    </div>
-                    <span style="margin-top:10px; color: #fff;"> SQL </span>
-                </div>
-
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div>
-                         <img src={Git_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
-                    </div>
-                    <span style=" margin-top:10px; color: #fff;"> Git </span>
-                </div>
-
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div>
-                         <img src={UE_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
-                    </div>
-                    <span style=" margin-top:10px; color: #fff;"> Unreal Engine </span>
-                </div>
-
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div>
-                         <img src={Cpp_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
-                    </div>
-                    <span style=" margin-top:10px; color: #fff;"> C++ </span>
-                </div>
-
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div>
-                         <img src={Rust_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
-                    </div>
-                    <span style=" margin-top:10px; color: #fff;"> Rust </span>
-                </div>
-
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div>
-                         <img src={RTF_Pic.src} width="50px" height="50px" alt="Temp Profile Pic" />
-                    </div>
-                    <span style=" margin-top:10px; color: #fff;"> RTF </span>
-                </div>
-                
-            </div>  
         </div>
     </div>  
    
@@ -277,3 +272,157 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
         </div>
    </div>
 </Layout>
+
+<script>
+    const carousel = document.getElementById("technology-carousel");
+    const leftButton = document.getElementById("tech-left");
+    const rightButton = document.getElementById("tech-right");
+
+    const scrollAmount = 300;
+    const tolerance = 5; // px buffer to avoid rounding issues|
+
+    function updateButtons(){
+         if (!carousel || !leftButton || !rightButton) return;
+        const { scrollLeft, scrollWidth, clientWidth } = carousel;
+
+        const atStart = scrollLeft <= tolerance;
+        console.log("ScrollLeft: " + scrollLeft + ", tolerance: " + tolerance + ", atStart: " + atStart);
+        const atEnd = scrollLeft + clientWidth >= scrollWidth - tolerance;
+        leftButton.classList.toggle('is-hidden', atStart);
+        rightButton.classList.toggle('is-hidden', atEnd);
+
+    }
+
+    rightButton?.addEventListener("click", () => {
+        carousel?.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth"
+        });
+    });
+
+    leftButton?.addEventListener("click", () => {
+        
+        carousel?.scrollBy({
+            left: -scrollAmount,
+            behavior: "smooth"
+        });
+    });
+
+    carousel?.addEventListener('scroll', updateButtons);
+    window.addEventListener('resize', updateButtons);
+
+    updateButtons();
+</script>
+
+<style>
+    .technologies-section {
+        padding: 20px 40px;
+        background-color: #01040d;
+    }
+
+    .technologies-container {
+        padding: 20px;
+        background-color: #0A101B;
+        border-radius: 6px;
+    }
+
+    .technologies-title {
+        color: #8B5CF6;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .carousel-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .technology-carousel {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        padding: 10px 45px;
+    }
+
+    .technology-card {
+        flex: 0 0 120px;
+        height: 120px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid #1E293B;
+        border-radius: 8px;
+        background-color: #111827;
+
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .technology-card:hover {
+        transform: translateY(-5px);
+        border-color: #8B5CF6;
+    }
+
+    .technology-card img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+
+    .technology-card span {
+        margin-top: 10px;
+        color: white;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .technology-card.liquid span {
+        color: #111827;
+    }
+
+    .carousel-button {
+        position: absolute;
+        z-index: 2;
+
+        width: 40px;
+        height: 40px;
+
+        border: 1px solid #8B5CF6;
+        border-radius: 50%;
+
+        background-color: #0A101B;
+        color: white;
+
+        font-size: 20px;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: background-color 0.2s ease;
+    }
+
+    .carousel-button:hover {
+        background-color: #8B5CF6;
+    }
+
+    .carousel-button.left {
+        left: 0;
+    }
+
+    .carousel-button.right {
+        right: 0;
+    }
+    .carousel-button.is-hidden {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+</style>
