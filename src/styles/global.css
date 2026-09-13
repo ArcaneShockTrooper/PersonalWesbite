@@ -11,3 +11,26 @@ p {
 h1, h2, h3 {
     font-family: 'Space Grotesk', sans-serif;
 }
+
+
+@media (min-width: 900px) {
+    .myStoryContent {
+        flex-direction: row !important;
+        padding: 40px 40px 0px 40px !important;
+    }
+}
+.myStoryContent {
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 40px 0px 40px;
+}
+
+@media (min-width: 900px) {
+    .aboutMeContent{
+         flex-direction: row !important;
+    }
+}
+
+ .aboutMeContent{
+        flex-direction: column;
+}
