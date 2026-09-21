@@ -23,29 +23,41 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
             <h2 style="color: #fff; margin:0px; font-size:50px;">Hi, I'm Jordan</h2>
             <h2 style="color: #8B5CF6; margin-top:10px;">Developer. Problem Solver. Builder</h2>
             <h3 style="color: #fff; margin-top:20px; font-size: 15px; max-width: 350px;">I'm a developer with a passion for building clean, and user focused solutions. I enjoy turning ideas into real products that make an impact.</h3>
-            <div style="display:flex; gap:30px; margin-top:20px;">
-                <div style="display:flex;">
-                    <MapPinHouse style="color:#8B5CF6; margin-right: 10px;" />
-                    <div style="display:flex; flex-direction: column;">
-                        <span style=" color: #fff; font-size: 14px;">Location </span>
-                        <span style="color: #fff; font-size: 14px; margin-top:5px;">Pennsylvania, USA</span>
+            <div class="info-carousel">
+                <div class="info-row" id="infoRow">
+                    <div class="info-item">
+                        <MapPinHouse style="color:#8B5CF6; margin-right: 10px;" />
+                        <div style="display:flex; flex-direction: column;">
+                            <span style="color: #fff; font-size: 14px;">Location</span>
+                            <span style="color: #fff; font-size: 14px; margin-top:5px;">Pennsylvania, USA</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <Calendar style="color:#8B5CF6; margin-right: 10px;" />
+                        <div style="display:flex; flex-direction: column;">
+                            <span style="color: #fff; font-size: 14px;">Experience</span>
+                            <span style="color: #fff; font-size: 14px; margin-top:5px;">3+ years</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <Mail style="color:#8B5CF6; margin-right: 10px;" />
+                        <div style="display:flex; flex-direction: column;">
+                            <span style="color: #fff; font-size: 14px;">Email</span>
+                            <span style="color: #fff; font-size: 14px; margin-top:5px;">j0rdnk1ng2000@gmail.com</span>
+                        </div>
                     </div>
                 </div>
-                <div style="display:flex;">
-                    <Calendar style="color:#8B5CF6; margin-right: 10px;" />
-                    <div style="display:flex; flex-direction: column;">
-                        <span style="color: #fff; font-size: 14px;">Experience </span>
-                        <span style="color: #fff; font-size: 14px; margin-top:5px;">3+ years</span>
-                    </div>
-                </div>
-                <div style="display:flex;">
-                    <Mail style="color:#8B5CF6; margin-right: 10px;" />
-                    <div style="display:flex; flex-direction: column;">
-                        <span style="color: #fff; font-size: 14px;" >Email </span>
-                        <span style="color: #fff; font-size: 14px; margin-top:5px;">j0rdnk1ng2000@gmail.com</span>
-                    </div>
+
+                <div class="info-dots" id="infoDots">
+                    <button class="info-button left" id="info-left" aria-label="Previous Personal Information">
+                        &#10094;
+                    </button>
+                    <button class="info-button right" id="info-right" aria-label="Next Personal Information">
+                        &#10095;
+                    </button>
                 </div>
             </div>
+
             <div style="padding:15px 0px; margin-top: 20px;">
                 <a href="mailto:j0rdnk1ng2000@gmail.com" style="display:flex; width:fit-content; padding:20px; background-color: #8B5CF6; color: white; text-decoration: none; border-radius: 5px;" href="mailto:j0rdnk1ng2000@gmail.com">Lets Connect <ArrowRight style="margin-left:10px;" color="white" size={18} /></a>
             </div>
@@ -222,40 +234,53 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
     </div>  
    
    <div style="padding:20px 40px; background-color: #01040d;">
-        <div style="gap:30px; justify-content: space-between; display:flex; border-radius:6px; padding:20px; background-color: #0A101B;">
-            
-            <div style="display:flex;">
-                <Folder style="color:#8B5CF6; margin-right: 10px;" size={40} />
-                <div style="display:flex; flex-direction: column;">
-                    <span style="font-size: 24px; color:white;">20+</span>
-                    <span style="color:white;">Projects Completed</span>
-                </div>
-            </div>
-            
-            <div style="display:flex;">
-                <User style="color:#8B5CF6; margin-right: 10px;" size={40} />
-                <div style="display:flex; flex-direction: column;">
-                    <span style="font-size: 24px; color:white;">3+</span>
-                    <span style="color:white;">Years of Experience</span>
-                </div>
-            </div>
+        <div class="career-container" style="gap:30px; justify-content: space-between; display:flex; border-radius:6px; padding:20px; background-color: #0A101B;">
 
-            <div style="display:flex;">
-                <CodeXml style="color:#8B5CF6; margin-right: 10px;" size={40} />
-                <div style="display:flex; flex-direction: column;">
-                    <span style="font-size: 24px; color:white;">10+</span>
-                    <span style="color:white;">Technologies</span>
+            <div class="career-carousel">
+                <div class="career-row" id="careerRow">
+                    <div class="career-item">
+                        <Folder style="color:#8B5CF6; margin-right: 10px;" size={40} />
+                        <div style="display:flex; flex-direction: column;">
+                            <span style="font-size: 24px; color:white;">20+</span>
+                            <span style="color:white;">Projects Completed</span>
+                        </div>
+                    </div>
+                    <div class="career-item">
+                        <User style="color:#8B5CF6; margin-right: 10px;" size={40} />
+                        <div style="display:flex; flex-direction: column;">
+                            <span style="font-size: 24px; color:white;">3+</span>
+                            <span style="color:white;">Years of Experience</span>
+                        </div>
+                    </div>
+                    <div class="career-item">
+                        <CodeXml style="color:#8B5CF6; margin-right: 10px;" size={40} />
+                        <div style="display:flex; flex-direction: column;">
+                            <span style="font-size: 24px; color:white;">10+</span>
+                            <span style="color:white;">Technologies</span>
+                        </div>
+                    </div>
+                    <div class="career-item">
+                        <Trophy style="color:#8B5CF6; margin-right: 10px;" size={40} />
+                        <div style="display:flex; flex-direction: column;">
+                            <span style="font-size: 24px; color:white;">100%</span>
+                            <span style="color:white;">Passion</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div style="display:flex;">
-                <Trophy style="color:#8B5CF6; margin-right: 10px;" size={40} />
-                <div style="display:flex; flex-direction: column;">
-                    <span style="font-size: 24px; color:white;">100%</span>
-                    <span style="color:white;">Passion</span>
+                <div class="career-dots" id="careerDots">
+                    <button class="career-button left" id="career-left" aria-label="Previous career achievements">
+                        &#10094;
+                    </button>
+                    <button class="career-button right" id="career-right" aria-label="Next career achievements">
+                        &#10095;
+                    </button>
                 </div>
             </div>
         </div>
+
+        
+
    </div>
    
    <div style="padding:10px 40px; background-color: #01040d;">
@@ -268,10 +293,249 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
                 </div>
             </div>
            
-            <a href="http://localhost:4321/projects" style="height:fit-content; text-decoration: none; display:flex; align-items: center; background:#8B5CF6; color:white; padding:10px; border-radius:6px; text-decoration:none;`">Get In Touch<ArrowRight style="margin-left:10px;" color="white" size={20} /></a>
+            <a href="http://localhost:4321/projects" style="margin-left: 20px; height:fit-content; text-decoration: none; display:flex; align-items: center; background:#8B5CF6; color:white; padding:10px; border-radius:6px; text-decoration:none;`">Get In Touch<ArrowRight style="margin-left:10px;" color="white" size={20} /></a>
         </div>
    </div>
 </Layout>
+
+<script>
+    const row = document.getElementById('infoRow');
+    const dots = document.querySelectorAll('#infoDots .dot');
+    const items = row ? Array.from(row.children) : [];
+    const rightButton = document.querySelector('#infoDots .info-button.right');
+    const leftButton = document.querySelector('#infoDots .info-button.left');
+
+    const scrollAmount = 300;
+    const tolerance = 5; // px buffer to avoid rounding issues|
+
+    updateInfoButtons();
+
+    rightButton?.addEventListener("click", () => {
+        row?.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth"
+        });
+    });
+
+    leftButton?.addEventListener("click", () => {
+        
+        row?.scrollBy({
+            left: -scrollAmount,
+            behavior: "smooth"
+        });
+    });
+
+    function updateInfoButtons(){
+         if (!row || !leftButton || !rightButton) return;
+        const { scrollLeft, scrollWidth, clientWidth } = row;
+
+        const atStart = scrollLeft <= tolerance;
+        const atEnd = scrollLeft + clientWidth >= scrollWidth - tolerance;
+        console.log("ScrollLeft: " + scrollLeft + ", tolerance: " + tolerance + ", atStart: " + atStart + ", atEnd: " + atEnd);
+        leftButton.classList.toggle('is-hidden', atStart);
+        rightButton.classList.toggle('is-hidden', atEnd);
+
+    }
+
+    if (row) {
+        // --- active dot tracking on scroll ---
+        let ticking = false;
+        const updateActiveDot = () => {
+            const rowLeft = row.getBoundingClientRect().left;
+            let closestIndex = 0;
+            let closestDist = Infinity;
+            items.forEach((item, i) => {
+                const dist = Math.abs(item.getBoundingClientRect().left - rowLeft);
+                if (dist < closestDist) {
+                    closestDist = dist;
+                    closestIndex = i;
+                }
+            });
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === closestIndex));
+        };
+
+        // --- drag to scroll ---
+        let isDown = false;
+        let didDrag = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+
+        const startDrag = (clientX) => {
+            isDown = true;
+            didDrag = false;
+            startX = clientX;
+            startScrollLeft = row.scrollLeft;
+            row.classList.add('dragging');
+        };
+
+        const moveDrag = (clientX) => {
+            if (!isDown) return;
+            const delta = clientX - startX;
+            if (Math.abs(delta) > 3) didDrag = true;
+            row.scrollLeft = startScrollLeft - delta;
+        };
+
+        const endDrag = () => {
+            if (!isDown) return;
+            isDown = false;
+            row.classList.remove('dragging');
+            updateActiveDot();
+        };
+
+        row.addEventListener('pointerdown', (e) => {
+            row.setPointerCapture(e.pointerId);
+            startDrag(e.clientX);
+        });
+
+        row.addEventListener('pointermove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            moveDrag(e.clientX);
+        });
+
+        row.addEventListener('pointerup', endDrag);
+        row.addEventListener('pointercancel', endDrag);
+        row.addEventListener('pointerleave', endDrag);
+
+        // stop a drag from also firing a click on whatever's underneath
+        row.addEventListener('click', (e) => {
+            if (didDrag) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }, true);
+    }
+    row?.addEventListener('scroll', updateInfoButtons);
+</script>
+
+<script>
+    const careerRow = document.getElementById('careerRow');
+    const careerDots = document.querySelectorAll('#careerDots .career-dot');
+    const rightButton = document.querySelector('#careerDots .career-button.right');
+    const leftButton = document.querySelector('#careerDots .career-button.left');
+    const careerItems = careerRow ? Array.from(careerRow.children) : [];
+
+    const scrollAmount = 300;
+    const tolerance = 5; // px buffer to avoid rounding issues|
+
+    updateCareerButtons();
+
+    rightButton?.addEventListener("click", () => {
+        careerRow?.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth"
+        });
+    });
+
+    leftButton?.addEventListener("click", () => {
+        
+        careerRow?.scrollBy({
+            left: -scrollAmount,
+            behavior: "smooth"
+        });
+    });
+
+    function updateCareerButtons(){
+         if (!careerRow || !leftButton || !rightButton) return;
+        const { scrollLeft, scrollWidth, clientWidth } = careerRow;
+
+        const atStart = scrollLeft <= tolerance;
+        const atEnd = scrollLeft + clientWidth >= scrollWidth - tolerance;
+        console.log("ScrollLeft: " + scrollLeft + ", tolerance: " + tolerance + ", atStart: " + atStart + ", atEnd: " + atEnd);
+        leftButton.classList.toggle('is-hidden', atStart);
+        rightButton.classList.toggle('is-hidden', atEnd);
+
+    }
+
+    careerDots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+            const index = Number(dot.dataset.index);
+            const target = careerItems[index];
+            if (target && careerRow) {
+                careerRow.scrollTo({ left: target.offsetLeft - careerRow.offsetLeft, behavior: 'smooth' });
+            }
+        });
+    });
+
+    if (careerRow) {
+        // --- active dot tracking on scroll ---
+        let ticking = false;
+        const updateActiveDot = () => {
+            const rowLeft = careerRow.getBoundingClientRect().left;
+            let closestIndex = 0;
+            let closestDist = Infinity;
+            careerItems.forEach((item, i) => {
+                const dist = Math.abs(item.getBoundingClientRect().left - rowLeft);
+                if (dist < closestDist) {
+                    closestDist = dist;
+                    closestIndex = i;
+                }
+            });
+            careerDots.forEach((dot, i) => dot.classList.toggle('active', i === closestIndex));
+        };
+
+        careerRow.addEventListener('scroll', () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                updateActiveDot();
+                ticking = false;
+            });
+        });
+
+        // --- drag to scroll ---
+        let isDown = false;
+        let didDrag = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+
+        const startDrag = (clientX) => {
+            isDown = true;
+            didDrag = false;
+            startX = clientX;
+            startScrollLeft = careerRow.scrollLeft;
+            careerRow.classList.add('dragging');
+        };
+
+        const moveDrag = (clientX) => {
+            if (!isDown) return;
+            const delta = clientX - startX;
+            if (Math.abs(delta) > 3) didDrag = true;
+            careerRow.scrollLeft = startScrollLeft - delta;
+        };
+
+        const endDrag = () => {
+            if (!isDown) return;
+            isDown = false;
+            careerRow.classList.remove('dragging');
+            updateActiveDot();
+        };
+
+        careerRow.addEventListener('pointerdown', (e) => {
+            careerRow.setPointerCapture(e.pointerId);
+            startDrag(e.clientX);
+        });
+
+        careerRow.addEventListener('pointermove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            moveDrag(e.clientX);
+        });
+
+        careerRow.addEventListener('pointerup', endDrag);
+        careerRow.addEventListener('pointercancel', endDrag);
+        careerRow.addEventListener('pointerleave', endDrag);
+
+        // stop a drag from also firing a click on whatever's underneath
+        careerRow.addEventListener('click', (e) => {
+            if (didDrag) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }, true);
+    }
+    careerRow?.addEventListener('scroll', updateCareerButtons);
+</script>
 
 <script>
     const carousel = document.getElementById("technology-carousel");
@@ -313,6 +577,196 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
 
     updateButtons();
 </script>
+
+<style>
+    .career-button.is-hidden {
+       color:#d5d5d55e;
+       background-color: #4343436b;
+       border:1px solid #4d4e51bf;
+    }
+     .career-button {
+        z-index: 2;
+
+        width: 40px;
+        height: 40px;
+
+        border: 1px solid #8B5CF6;
+        border-radius: 50%;
+
+        background-color: #0A101B;
+        color: white;
+
+        font-size: 20px;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: background-color 0.2s ease;
+    }
+    .career-carousel{
+        width:100%;
+    }
+    .career-row {
+        display: flex;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .career-item {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .career-dots {
+        display: none;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .career-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        border: none;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .career-dot.active {
+        background: #8B5CF6;
+        transform: scale(1.3);
+    }
+
+    @media (max-width: 640px) {
+        .career-container{
+            overflow:hidden;
+        }
+        .career-row {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 50px;
+            scrollbar-width: none;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .career-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .career-row.dragging {
+            cursor: grabbing;
+            scroll-snap-type: none; /* let it move freely while dragging */
+        }
+
+        .career-item {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .career-dots {
+            display: flex;
+        }
+    }
+</style>
+
+<style>
+    .info-button.is-hidden {
+       color:#d5d5d55e;
+       background-color: #4343436b;
+       border:1px solid #4d4e51bf;
+    }
+     .info-button {
+        z-index: 2;
+
+        width: 40px;
+        height: 40px;
+
+        border: 1px solid #8B5CF6;
+        border-radius: 50%;
+
+        background-color: #0A101B;
+        color: white;
+
+        font-size: 20px;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: background-color 0.2s ease;
+    }
+    .info-row {
+        display: flex;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .info-item {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .info-dots {
+        display: none;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        border: none;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .dot.active {
+        background: #8B5CF6;
+        transform: scale(1.3);
+    }
+
+    @media (max-width: 640px) {
+        .info-row {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 50px;
+            scrollbar-width: none;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .info-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .info-row.dragging {
+            cursor: grabbing;
+            scroll-snap-type: none; /* let it move freely while dragging */
+        }
+
+        .info-item {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .info-dots {
+            display: flex;
+        }
+    }
+</style>
 
 <style>
     .technologies-section {
