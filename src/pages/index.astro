@@ -44,7 +44,7 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, ArrowRight, User, Mail } from "luc
 
 	</div>
 
-	<div class="skillCarosuel-Container" style=" background:#01040d; padding-left:40px; padding-bottom: 40px;">
+	<div class="skillCarosuel-Container" style=" background:#01040d;">
 		<div class="skills-carousel">
 			<div class="skills-outer">
 				<div class="skills-row" id="skillsRow">
@@ -87,10 +87,10 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, ArrowRight, User, Mail } from "luc
 	
 
 
-	<div style=" background:#01040d; padding-left:40px; padding-bottom: 40px;">
-		<div style="display:flex; flex-direction:column;">
+	<div class="projectCarousel-container" style="background:#01040d;">
+		<div class="projectCarousel-titleContent" style="display:flex; flex-direction:column;">
 			<h2 style="color:#8B5CF6; font-size: 20px; margin:0px;">Featured Projects</h2>
-			<div style="display:flex; align-items:center; justify-content:space-between;">
+			<div class="projectCarousel-titleButtons" style="display:flex; align-items:center; justify-content:space-between;">
 				<h3 style=" color:#8B5CF6; font-size:30px; margin:0px;">Things I've Built</h3>
 				<a href="http://localhost:4321/projects" style="text-decoration: none; color:#8B5CF6; display:flex;">View all projects<ArrowRight style="margin-left:10px;" color="#8B5CF6" size={20} /></a>
 			</div>
@@ -194,8 +194,23 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, ArrowRight, User, Mail } from "luc
         user-drag: none;
         pointer-events: none; /* let pointer events pass through to the row for dragging */
     }
+    @media (min-width: 960px) {
+        .projectCarousel-container{
+            padding:40px;
+        }
+    }
 
-    @media (max-width: 640px) {
+    @media (max-width: 960px) {
+        .projectCarousel-container{
+            padding-bottom: 20px;
+        }
+        .projectCarousel-titleContent{
+            padding:0 40px 0 40px;
+            align-items: center;
+        }
+        .projectCarousel-titleButtons{
+            flex-flow: column;
+        }
         .project-row {
             overflow-x: auto;
             /* scroll-snap-type: x mandatory; */
@@ -442,8 +457,7 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, ArrowRight, User, Mail } from "luc
 
     @media (max-width: 970px) {
 		.skillCarosuel-Container {
-			padding-left: 40px;
-			padding-bottom: 40px;
+			padding-bottom: 20px;
 		}
         .skills-spacer {
 			width: 16px; /* matches the leading padding for visual symmetry */
