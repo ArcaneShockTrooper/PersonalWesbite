@@ -18,7 +18,7 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, ArrowRight, User, Mail } from "luc
 
 
 <Layout>
-	<div style="padding:0px 40px; height:100vh; justify-content:center; background:#01040d; align-items:start; display:flex; flex-direction:column;">
+	<div style="padding:40px; align-items:start; justify-content:center; background:#01040d; display:flex; flex-direction:column;">
 		
 		<h2 style="color:#8B5CF6; margin:0px;">Hi, I'm</h2>
 		<h1 style="color:white; margin:0px; margin-top:5px; font-size:50px;">Jordan King</h1>
@@ -42,38 +42,52 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, ArrowRight, User, Mail } from "luc
 			</a>
 		</div>
 
-		<div style="border:2px solid grey; display:flex; background:#0A101B; color:white; border-radius:6px; padding:20px 0px;">
-			
-			<div style="background:#0A101B; text-align:center; border-right: 2px solid white; padding:0px 20px;">
-				<CodeXml color="#8B5CF6" size={48} />
-				<h2 style="font-size: 20px;">Web Development</h2>
-				<p>Building fast, responsive, and accessible websites with modern technologies</p>
-			</div>
-
-			<div style="background:#0A101B; text-align:center; border-right: 2px solid white; padding:0px 20px;">
-				<ShoppingBag color="#10B981" size={48} />
-				<h2 style="font-size: 20px;">E-Commerce</h2>
-				<p>Experience with Shopify, custom apps, and complex storefront development</p>
-			</div>
-
-			<div style="background:#0A101B; text-align:center; border-right: 2px solid white; padding:0px 20px;">
-				<Gamepad2 color="#3B82F6" size={48} />
-				<h2 style="font-size: 20px;">Game Development</h2>
-				<p>Exploring Unreal Engine to bring interactive ideas and worlds to life</p>
-			</div>
-			
-			<div style="background:#0A101B; text-align:center; padding:0px 20px;">
-				<Cpu color="#F97316" size={48} />
-				<h2 style="font-size: 20px;"> Embedded Systems</h2>
-				<p>Learning C and embedded programming to build smart, efficient devices</p>
-			</div>
-	
-		</div>
-
 	</div>
 
+	<div class="skillCarosuel-Container" style=" background:#01040d; padding-left:40px; padding-bottom: 40px;">
+		<div class="skills-carousel">
+			<div class="skills-outer">
+				<div class="skills-row" id="skillsRow">
 
-	<div style=" background:#01040d; padding:20px;">
+					<div class="skill-card">
+						<CodeXml color="#8B5CF6" size={48} />
+						<h2 style="font-size: 20px;">Web Development</h2>
+						<p>Building fast, responsive, and accessible websites with modern technologies</p>
+					</div>
+
+					<div class="skill-card">
+						<ShoppingBag color="#10B981" size={48} />
+						<h2 style="font-size: 20px;">E-Commerce</h2>
+						<p>Experience with Shopify, custom apps, and complex storefront development</p>
+					</div>
+
+					<div class="skill-card">
+						<Gamepad2 color="#3B82F6" size={48} />
+						<h2 style="font-size: 20px;">Game Development</h2>
+						<p>Exploring Unreal Engine to bring interactive ideas and worlds to life</p>
+					</div>
+
+					<div class="skill-card" style="border-right:none;">
+						<Cpu color="#F97316" size={48} />
+						<h2 style="font-size: 20px;">Embedded Systems</h2>
+						<p>Learning C and embedded programming to build smart, efficient devices</p>
+					</div>
+					<div class="skills-spacer" aria-hidden="true"></div>
+				</div>
+			</div>
+
+			<div class="skills-dots" id="skillsDots">
+				<button class="dot active" data-index="0" aria-label="Go to slide 1"></button>
+				<button class="dot" data-index="1" aria-label="Go to slide 2"></button>
+				<button class="dot" data-index="2" aria-label="Go to slide 3"></button>
+				<button class="dot" data-index="3" aria-label="Go to slide 4"></button>
+			</div>
+		</div>
+	</div>
+	
+
+
+	<div style=" background:#01040d; padding-left:40px; padding-bottom: 40px;">
 		<div style="display:flex; flex-direction:column;">
 			<h2 style="color:#8B5CF6; font-size: 20px; margin:0px;">Featured Projects</h2>
 			<div style="display:flex; align-items:center; justify-content:space-between;">
@@ -82,45 +96,524 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, ArrowRight, User, Mail } from "luc
 			</div>
 			
 		</div>
-		<div style="display:flex; gap:10px; margin-top:20px;">
-			
-			<a href="http://localhost:4321/HanksBelts" style="text-decoration: unset; background:#0A101B; text-decoration: unset; border-radius: 6px; border:2px solid white; width:33%;">
-				<div style="height:50%;">
-					<img style="height:100%; width:100%;" src={HanksBeltsPic.src} width="100" height="100" alt="Hank's Belts" />
-				</div>
-				<div style="padding:10px;">
-					<span style="font-size: 12px; padding: 5px; border-radius: 6px; background: #8B5CF6; color: white; margin-bottom: 10px;">E-COMMERCE</span>
-					<h2 style="color:white; margin:15px 0px 0px;">Hank's Belts</h2>
-					<p style="color:white; margin:10px 0px 20px 0px; font-size: 14px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
-					<p style="color:white; margin:0px; font-size: 12px;">Shopify &#8226; Liquid &#8226; JavaScript</p>
-				</div>
-			</a>
+		<div class="project-carousel">
+			<div class="project-row" id="projectRow">
 
-			<a href="http://localhost:4321/Woolx" style="text-decoration: unset; background:#0A101B; text-decoration: unset; border-radius: 6px; border:2px solid white; width:33%;">
-				<div style="height:50%;">
-					<img style="height:100%; width:100%;" src={WoolxPic.src} width="100" height="100" alt="Woolx" />
-				</div>
-				<div style="padding:10px;">
-					<span style="font-size: 12px; padding: 5px; border-radius: 6px; background: #8B5CF6; color: white; margin-bottom: 10px;">E-COMMERCE</span>
-					<h2 style="color:white; margin:15px 0px 0px;">Woolx</h2>
-					<p style="color:white; margin:10px 0px 20px 0px; font-size: 14px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
-					<p style="color:white; margin:0px; font-size: 12px;">Shopify &#8226; Liquid &#8226; JavaScript</p>
-				</div>
-			</a>
+				<a href="http://localhost:4321/HanksBelts" class="project-card">
+					<div style="height:50%;">
+						<img style="height:100%; width:100%;" src={HanksBeltsPic.src} width="100" height="100" alt="Hank's Belts" />
+					</div>
+					<div style="padding:10px;">
+						<span style="font-size: 12px; padding: 5px; border-radius: 6px; background: #8B5CF6; color: white; margin-bottom: 10px;">E-COMMERCE</span>
+						<h2 style="color:white; margin:15px 0px 0px;">Hank's Belts</h2>
+						<p style="color:white; margin:10px 0px 20px 0px; font-size: 14px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
+						<p style="color:white; margin:0px; font-size: 12px;">Shopify &#8226; Liquid &#8226; JavaScript</p>
+					</div>
+				</a>
 
-			<div  style="background:#0A101B; border-radius: 6px; border:2px solid white; width:33%;">
-				<div style="height:50%;">
-					<img style="height:100%; width:100%;" src={tempDelveImage.src} width="100" height="100" alt="Delve" />
+				<a href="http://localhost:4321/Woolx" class="project-card">
+					<div style="height:50%;">
+						<img style="height:100%; width:100%;" src={WoolxPic.src} width="100" height="100" alt="Woolx" />
+					</div>
+					<div style="padding:10px;">
+						<span style="font-size: 12px; padding: 5px; border-radius: 6px; background: #8B5CF6; color: white; margin-bottom: 10px;">E-COMMERCE</span>
+						<h2 style="color:white; margin:15px 0px 0px;">Woolx</h2>
+						<p style="color:white; margin:10px 0px 20px 0px; font-size: 14px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
+						<p style="color:white; margin:0px; font-size: 12px;">Shopify &#8226; Liquid &#8226; JavaScript</p>
+					</div>
+				</a>
+
+				<div class="project-card">
+					<div style="height:50%;">
+						<img style="height:100%; width:100%;" src={tempDelveImage.src} width="100" height="100" alt="Delve" />
+					</div>
+					<div style="padding:10px;">
+						<span style="font-size: 12px; padding: 5px; border-radius: 6px; background: blue; color: white; margin-bottom: 10px;">Game Dev</span>
+						<h2 style="color:white; margin:15px 0px 0px;">Delve</h2>
+						<p style="color:white; margin:10px 0px 20px 0px; font-size: 14px;">A Multiplayer Dungeon Crawler game</p>
+						<p style="color:white; margin:0px; font-size: 12px;">Unreal Engine 5 &#8226; Blueprints &#8226; C++</p>
+					</div>
 				</div>
-				<div style="padding:10px;">
-					<span style="font-size: 12px; padding: 5px; border-radius: 6px; background: blue; color: white; margin-bottom: 10px;">Game Dev</span>
-					<h2 style="color:white; margin:15px 0px 0px;">Delve</h2>
-					<p style="color:white; margin:10px 0px 20px 0px; font-size: 14px;">A Multiplayer Dungeon Crawler game</p>
-					<p style="color:white; margin:0px; font-size: 12px;">Unreal Engine 5 &#8226; Blueprints &#8226; C++</p>
-				</div>
+
 			</div>
 
+			<div class="project-dots" id="projectDots">
+				<button class="dot active" data-index="0" aria-label="Go to slide 1"></button>
+				<button class="dot" data-index="1" aria-label="Go to slide 2"></button>
+				<button class="dot" data-index="2" aria-label="Go to slide 3"></button>
+			</div>
 		</div>
 	</div>
 	
 </Layout>
+
+
+<style>
+    .project-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .project-card {
+        text-decoration: unset;
+        background: #0A101B;
+        border-radius: 6px;
+        border: 2px solid white;
+        width: 33%;
+        display: block;
+        -webkit-user-drag: none;
+        user-drag: none;
+    }
+
+    .project-dots {
+        display: none;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        border: none;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .dot.active {
+        background: #8B5CF6;
+        transform: scale(1.3);
+    }
+
+	.project-card img {
+        -webkit-user-drag: none;
+        user-drag: none;
+        pointer-events: none; /* let pointer events pass through to the row for dragging */
+    }
+
+    @media (max-width: 640px) {
+        .project-row {
+            overflow-x: auto;
+            /* scroll-snap-type: x mandatory; */
+            /* -webkit-overflow-scrolling: touch; */
+            gap: 16px;
+            scrollbar-width: none;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .project-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .project-row.dragging {
+            cursor: grabbing;
+            scroll-snap-type: none;
+        }
+
+        .project-card {
+            flex-shrink: 0;
+            width: 85%;
+            /*scroll-snap-align: start;
+            scroll-snap-stop: always;*/
+        }
+
+        .project-dots {
+            display: flex;
+        }
+    }
+</style>
+
+<script>
+    const row = document.getElementById('projectRow');
+    const dots = document.querySelectorAll('#projectDots .dot');
+    const items = row ? Array.from(row.children) : [];
+
+    const updateActiveDot = (index) => {
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    };
+
+    const getClosestIndex = () => {
+        const rowLeft = row.getBoundingClientRect().left;
+        let closestIndex = 0;
+        let closestDist = Infinity;
+        items.forEach((item, i) => {
+            const dist = Math.abs(item.getBoundingClientRect().left - rowLeft);
+            if (dist < closestDist) {
+                closestDist = dist;
+                closestIndex = i;
+            }
+        });
+        return closestIndex;
+    };
+
+    // eased animation to a target scrollLeft, so snapping feels smooth instead of instant
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    let animationFrame;
+    const animateScrollTo = (target, duration = 350) => {
+        cancelAnimationFrame(animationFrame);
+        const start = row.scrollLeft;
+        const change = target - start;
+        const startTime = performance.now();
+
+        const step = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            row.scrollLeft = start + change * easeOutCubic(progress);
+            if (progress < 1) {
+                animationFrame = requestAnimationFrame(step);
+            }
+        };
+        animationFrame = requestAnimationFrame(step);
+    };
+
+    const goToIndex = (index) => {
+        const clamped = Math.max(0, Math.min(index, items.length - 1));
+        const target = items[clamped].offsetLeft - row.offsetLeft;
+        animateScrollTo(target);
+        updateActiveDot(clamped);
+    };
+
+    dots.forEach((dot) => {
+        dot.addEventListener('click', () => goToIndex(Number(dot.dataset.index)));
+    });
+
+    if (row) {
+        // --- drag to scroll, with velocity tracking for momentum ---
+        let isDown = false;
+        let didDrag = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+        let lastX = 0;
+        let lastTime = 0;
+        let velocity = 0;
+
+        const startDrag = (clientX) => {
+            cancelAnimationFrame(animationFrame);
+            isDown = true;
+            didDrag = false;
+            startX = clientX;
+            startScrollLeft = row.scrollLeft;
+            lastX = clientX;
+            lastTime = performance.now();
+            velocity = 0;
+            row.classList.add('dragging');
+        };
+
+        const moveDrag = (clientX) => {
+            if (!isDown) return;
+            const delta = clientX - startX;
+            if (Math.abs(delta) > 3) didDrag = true;
+            row.scrollLeft = startScrollLeft - delta;
+
+            const now = performance.now();
+            const dt = now - lastTime;
+            if (dt > 0) {
+                velocity = (clientX - lastX) / dt; // px per ms
+            }
+            lastX = clientX;
+            lastTime = now;
+        };
+
+        const endDrag = () => {
+            if (!isDown) return;
+            isDown = false;
+            row.classList.remove('dragging');
+
+            const currentIndex = getClosestIndex();
+            const flickThreshold = 0.35; // px/ms, tune to taste
+
+            let targetIndex = currentIndex;
+            if (velocity < -flickThreshold) {
+                targetIndex = currentIndex + 1; // flicked left fast -> advance
+            } else if (velocity > flickThreshold) {
+                targetIndex = currentIndex - 1; // flicked right fast -> go back
+            }
+
+            goToIndex(targetIndex);
+        };
+
+        row.addEventListener('pointerdown', (e) => {
+            e.preventDefault();
+            row.setPointerCapture(e.pointerId);
+            startDrag(e.clientX);
+        });
+
+        row.addEventListener('pointermove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            moveDrag(e.clientX);
+        });
+
+        row.addEventListener('pointerup', endDrag);
+        row.addEventListener('pointercancel', endDrag);
+        row.addEventListener('pointerleave', endDrag);
+        row.addEventListener('dragstart', (e) => e.preventDefault());
+
+        row.addEventListener('click', (e) => {
+            if (didDrag) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }, true);
+    }
+</script>
+
+<style>
+    .skills-outer {
+        border: 2px solid grey;
+        background: #0A101B;
+        color: white;
+        border-radius: 6px;
+        padding: 20px 0px;
+    }
+	.skills-spacer {
+		flex-shrink: 0;
+		width: 1px; /* just enough to stop hard clipping at the last card's edge */
+	}
+
+    .skills-row {
+        display: flex;
+    }
+
+    .skill-card {
+        background: #0A101B;
+        text-align: center;
+        border-right: 2px solid white;
+        padding: 0px 20px;
+        flex: 1;
+		min-width:175px;
+		-webkit-user-drag: none;
+		user-drag: none;
+    }
+
+	.skill-card svg {
+		pointer-events: none; /* let pointer events pass through to the row */
+		-webkit-user-drag: none;
+		user-drag: none;
+	}
+
+	.skill-card h2,
+	.skill-card p {
+		pointer-events: none; /* text shouldn't intercept the drag gesture either */
+	}
+
+    .skill-card:last-child {
+        border-right: none;
+    }
+
+    .skills-dots {
+        display: none;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        border: none;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .dot.active {
+        background: #8B5CF6;
+        transform: scale(1.3);
+    }
+
+	.skillCarosuel-Container {
+		background:#01040d;
+	}
+
+	@media (min-width: 969px) {
+		.skillCarosuel-Container {
+			padding:40px;
+		}
+	}
+
+    @media (max-width: 970px) {
+		.skillCarosuel-Container {
+			padding-left: 40px;
+			padding-bottom: 40px;
+		}
+        .skills-spacer {
+			width: 16px; /* matches the leading padding for visual symmetry */
+		}
+		.skills-row {
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			gap: 16px;
+			padding: 4px 16px 4px 16px; /* small top/bottom padding added too */
+			scrollbar-width: none;
+			cursor: grab;
+			user-select: none;
+		}
+
+        .skills-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .skills-row.dragging {
+            cursor: grabbing;
+        }
+
+        .skill-card {
+            flex-shrink: 0;
+            width: 85%;
+            border-right: none; /* divider look breaks once cards peek/scroll individually */
+            border: 2px solid white !important;
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .skills-dots {
+            display: flex;
+        }
+    }
+</style>
+<script>
+(function () {
+    const skillsRow = document.getElementById('skillsRow');
+    const skillsDots = document.querySelectorAll('#skillsDots .dot');
+    const skillsItems = skillsRow ? Array.from(skillsRow.children) : [];
+
+    const updateSkillsActiveDot = (index) => {
+        skillsDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    };
+
+    const getSkillsClosestIndex = () => {
+        const rowLeft = skillsRow.getBoundingClientRect().left;
+        let closestIndex = 0;
+        let closestDist = Infinity;
+        skillsItems.forEach((item, i) => {
+            const dist = Math.abs(item.getBoundingClientRect().left - rowLeft);
+            if (dist < closestDist) {
+                closestDist = dist;
+                closestIndex = i;
+            }
+        });
+        return closestIndex;
+    };
+
+    const skillsEaseOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    let skillsAnimationFrame;
+    const animateSkillsScrollTo = (target, duration = 350) => {
+        cancelAnimationFrame(skillsAnimationFrame);
+        const start = skillsRow.scrollLeft;
+        const change = target - start;
+        const startTime = performance.now();
+
+        const step = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            skillsRow.scrollLeft = start + change * skillsEaseOutCubic(progress);
+            if (progress < 1) {
+                skillsAnimationFrame = requestAnimationFrame(step);
+            }
+        };
+        skillsAnimationFrame = requestAnimationFrame(step);
+    };
+
+    const goToSkillsIndex = (index) => {
+        const clamped = Math.max(0, Math.min(index, skillsItems.length - 1));
+        const target = skillsItems[clamped].offsetLeft - (skillsRow.offsetLeft * 2);
+		console.log("skill Item offset:", skillsItems[clamped].offsetLeft, "skill row offset:", skillsRow.offsetLeft, "Target scrollLeft:", target);
+        animateSkillsScrollTo(target);
+        updateSkillsActiveDot(clamped);
+    };
+
+    skillsDots.forEach((dot) => {
+        dot.addEventListener('click', () => goToSkillsIndex(Number(dot.dataset.index)));
+    });
+
+    if (skillsRow) {
+        let skillsIsDown = false;
+        let skillsDidDrag = false;
+        let skillsStartX = 0;
+        let skillsStartScrollLeft = 0;
+        let skillsLastX = 0;
+        let skillsLastTime = 0;
+        let skillsVelocity = 0;
+
+        const startSkillsDrag = (clientX) => {
+            cancelAnimationFrame(skillsAnimationFrame);
+            skillsIsDown = true;
+            skillsDidDrag = false;
+            skillsStartX = clientX;
+            skillsStartScrollLeft = skillsRow.scrollLeft;
+            skillsLastX = clientX;
+            skillsLastTime = performance.now();
+            skillsVelocity = 0;
+            skillsRow.classList.add('dragging');
+        };
+
+        const moveSkillsDrag = (clientX) => {
+			console.log("Moving skills drag");
+            if (!skillsIsDown) return;
+            const delta = clientX - skillsStartX;
+            if (Math.abs(delta) > 3) skillsDidDrag = true;
+            skillsRow.scrollLeft = skillsStartScrollLeft - delta;
+
+            const now = performance.now();
+            const dt = now - skillsLastTime;
+            if (dt > 0) {
+                skillsVelocity = (clientX - skillsLastX) / dt;
+            }
+            skillsLastX = clientX;
+            skillsLastTime = now;
+        };
+
+        const endSkillsDrag = () => {
+            if (!skillsIsDown) return;
+            skillsIsDown = false;
+            skillsRow.classList.remove('dragging');
+
+            const currentIndex = getSkillsClosestIndex();
+            const flickThreshold = 0.35;
+
+            let targetIndex = currentIndex;
+            if (skillsVelocity < -flickThreshold) {
+                targetIndex = currentIndex + 1;
+            } else if (skillsVelocity > flickThreshold) {
+                targetIndex = currentIndex - 1;
+            }
+
+            goToSkillsIndex(targetIndex);
+        };
+
+        skillsRow.addEventListener('pointerdown', (e) => {
+            e.preventDefault();
+            skillsRow.setPointerCapture(e.pointerId);
+            startSkillsDrag(e.clientX);
+        });
+
+        skillsRow.addEventListener('pointermove', (e) => {
+            if (!skillsIsDown) return;
+            e.preventDefault();
+            moveSkillsDrag(e.clientX);
+        });
+
+        skillsRow.addEventListener('pointerup', endSkillsDrag);
+        skillsRow.addEventListener('pointercancel', endSkillsDrag);
+        skillsRow.addEventListener('pointerleave', endSkillsDrag);
+        skillsRow.addEventListener('dragstart', (e) => e.preventDefault());
+
+        skillsRow.addEventListener('click', (e) => {
+            if (skillsDidDrag) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }, true);
+    }
+})();
+</script>
