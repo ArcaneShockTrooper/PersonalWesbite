@@ -15,7 +15,7 @@ import RTF_Pic from '../assets/rtf.png';
 import linkedInIcon from '../assets/linkedin.png';
 import githubIcon from '../assets/github.png';
 
-import { Mail, Calendar, CircleCheck, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, Rocket, Gamepad2, Trophy, User, ShoppingBag, Cpu } from "lucide-astro";
+import { Mail, ChevronLeft, ChevronRight, Calendar, CircleCheck, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, Rocket, Gamepad2, Trophy, User, ShoppingBag, Cpu } from "lucide-astro";
 ---
 
 <Layout>
@@ -24,36 +24,50 @@ import { Mail, Calendar, CircleCheck, MapPinHouse, Folder,  ArrowRight, CodeXml,
     <h2 style="color: white; font-size:40px; margin:15px;">Let's Work Together.</h2>
     <p style="color: white; max-width:340px; text-align:center; line-height:30px;  margin:0px;">Have a project, opportunity you'd like to discuss? I'd love to hear from you!</p>
 </div>
-<div style="justify-content:center; display:flex; gap:20px; padding: 40px; background-color: #01040d;">
-    <div style="background-color: #0A101B; min-height: fit-content; border:2px solid #8B5CF6; border-radius: 6px; max-width: 200px; display:flex; flex-direction:column; align-items:center; padding: 40px;">
-        <div style="display:flex; padding:12px; border:2px solid white; border-radius:40px;">
-            <Mail style="color:#8B5CF6; " size={40} />
+<div class="contact-carousel">
+ 
+    <button class="contact-arrow contact-prev" aria-label="Previous contact option">
+        <ChevronLeft color="white" size={24} />
+    </button>
+    <button class="contact-arrow contact-next" aria-label="Next contact option">
+        <ChevronRight color="white" size={24} />
+    </button>
+ 
+    <div class="contact-list" style="justify-content:center; display:flex; gap:20px;">
+ 
+        <div class="contact-card" style="background-color: #0A101B; min-height: fit-content; border:2px solid #8B5CF6; border-radius: 6px; max-width: 200px; display:flex; flex-direction:column; align-items:center; padding: 40px;">
+            <div style="display:flex; padding:12px; border:2px solid white; border-radius:40px;">
+                <Mail style="color:#8B5CF6;" size={40} />
+            </div>
+            <h1 style="font-size:20px; color:white;">Email</h1>
+            <p style="line-height: 25px; color:white; text-align: center; max-width:200px;">The best way to reach me for professional opportunities.</p>
+            <a href="mailto:j0rdnk1ng2000@gmail.com" style="padding:15px; border-radius: 6px; background: #8B5CF6; color: white; text-decoration: none;">Send Me an Email</a>
         </div>
-        <h1 style="font-size:20px; color:white;">Email</h1>
-        <p style="line-height: 25px; color:white; text-align: center; max-width:200px;">The best way to reach me for professional opportunities.</p>
-        <a href="mailto:j0rdnk1ng2000@gmail.com" style="padding:15px; border-radius: 6px; background: #8B5CF6; color: white; text-decoration: none;">Send Me an Email</a>
-    </div>
-    
-    <div style="background-color: #0A101B; min-height: fit-content; border:2px solid #3b82f6; border-radius: 6px; max-width: 200px;  display:flex; flex-direction:column; align-items:center; padding: 40px;">
-        <div style="display:flex; padding:12px; border:2px solid white; border-radius:40px;">
-            <img src={linkedInIcon.src} width="40" height="40" alt="LinkedIn" />
+ 
+        <div class="contact-card" style="background-color: #0A101B; min-height: fit-content; border:2px solid #3b82f6; border-radius: 6px; max-width: 200px; display:flex; flex-direction:column; align-items:center; padding: 40px;">
+            <div style="display:flex; padding:12px; border:2px solid white; border-radius:40px;">
+                <img src={linkedInIcon.src} width="40" height="40" alt="LinkedIn" />
+            </div>
+            <h1 style="font-size:20px; color:white;">LINKEDIN</h1>
+            <p style="line-height: 25px; color:white; text-align:center; max-width:200px;">view my experience and connect with me.</p>
+            <a href="https://www.linkedin.com/in/jordan-king-b745751a3/" style="padding:15px; border-radius: 6px; background: #8B5CF6; color: white; text-decoration: none;">View Linkedin</a>
         </div>
-        <h1 style="font-size:20px; color:white;">LINKEDIN</h1>
-        <p style="line-height: 25px; color:white; text-align: center; text-align:center; max-width:200px;">view my experience and connect with me.</p>
-        <a href="https://www.linkedin.com/in/jordan-king-b745751a3/" style="padding:15px; border-radius: 6px; background: #8B5CF6; color: white; text-decoration: none;">View Linkedin</a>
-    </div>
-    
-    <div style="background-color: #0A101B; min-height: fit-content; border:2px solid rgb(16, 185, 129); border-radius: 6px; max-width: 200px;  display:flex; flex-direction:column; align-items:center; padding: 40px;">
-        <div style="display:flex; padding:12px; border:2px solid white; border-radius:40px;">
-            <img src={githubIcon.src} width="40" height="40" alt="GitHub" />
+ 
+        <div class="contact-card" style="background-color: #0A101B; min-height: fit-content; border:2px solid rgb(16, 185, 129); border-radius: 6px; max-width: 200px; display:flex; flex-direction:column; align-items:center; padding: 40px;">
+            <div style="display:flex; padding:12px; border:2px solid white; border-radius:40px;">
+                <img src={githubIcon.src} width="40" height="40" alt="GitHub" />
+            </div>
+            <h1 style="font-size:20px; color:white;">GITHUB</h1>
+            <p style="line-height: 25px; color:white; text-align:center; max-width:200px;">view my coding projects and contributions.</p>
+            <a href="https://github.com/ArcaneShockTrooper?tab=repositories" style="padding:15px; border-radius: 6px; background: #8B5CF6; color: white; text-decoration: none;">View GitHub</a>
         </div>
-        <h1 style="font-size:20px; color:white;">GITHUB</h1>
-        <p style="line-height: 25px; color:white; text-align: center; text-align:center; max-width:200px;">view my coding projects and contributions.</p>
-        <a href="https://github.com/ArcaneShockTrooper?tab=repositories" style="padding:15px; border-radius: 6px; background: #8B5CF6; color: white; text-decoration: none;">View GitHub</a>
+ 
     </div>
+ 
+    <div class="contact-dots"></div>
 </div>
 <div style="justify-items:center; padding:40px; background-color: #01040d;">
-    <div style="width:fit-content; border:2px solid grey; border-radius: 12px; padding:40px; display:flex; justify-content:center; gap:20px; background-color: #0A101B;">
+    <div class="availabilityInfo-Container" style="width:fit-content; border:2px solid grey; border-radius: 12px; padding:40px; display:flex; justify-content:center; gap:20px; background-color: #0A101B;">
         <div>
             <div style="display:flex; align-items:center; gap:10px;">
                 <div style="background-color:green; width:10px; height:10px; border-radius:20px; border:2px solid lightgreen;"></div>
@@ -61,9 +75,9 @@ import { Mail, Calendar, CircleCheck, MapPinHouse, Folder,  ArrowRight, CodeXml,
             </div>
             <p style="width:230px; color: white;">I'm open to new opportunities and exciting projects!</p>
         </div>
-        <div style="border-left:2px solid grey; padding-left:20px;">
+        <div class="interests-Container" style="border-left:2px solid grey; padding-left:20px;">
             <h2 style="color: white; font-size:20px;">I'm Interested In:</h2>
-            <div style=" display:flex; max-height:100px; flex-direction: column; gap:20px; flex-wrap:wrap;">
+            <div style=" display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:20px;">
                 <div style="height:20px; display:flex; align-items:center; gap:10px;">
                     <CircleCheck color="#8B5CF6" size={20} />
                     <p style="color: white;">Frontend Development</p>
@@ -94,3 +108,222 @@ import { Mail, Calendar, CircleCheck, MapPinHouse, Folder,  ArrowRight, CodeXml,
     </div>
 </div>
 </Layout>
+
+<style>
+    @media (max-width:870px){
+        .availabilityInfo-Container {
+            flex-direction: column;
+        }
+        .interests-Container{
+            border-left: none !important;
+            padding-left: 0px !important;
+            border-top: 2px solid grey;
+        }
+    }
+</style>
+
+<style is:global>
+    .contact-carousel {
+        position: relative;
+        padding: 40px;
+        background-color: #01040d;
+    }
+ 
+    .contact-arrow,
+    .contact-dots {
+        display: none;
+    }
+ 
+    .contact-dots button {
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: #4b5563;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+    }
+    .contact-dots button.is-active {
+        background: #8B5CF6;
+        transform: scale(1.3);
+    }
+ 
+    @media (max-width: 850px) {
+        .contact-carousel {
+            padding: 40px 20px 20px;
+        }
+ 
+        .contact-carousel .contact-list {
+            position: relative;
+            justify-content: flex-start !important; /* "center" would clip the first card when scrolling */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding-bottom: 20px;
+            cursor: grab;
+        }
+        .contact-carousel .contact-list::-webkit-scrollbar {
+            display: none;
+        }
+        .contact-carousel .contact-list.is-dragging {
+            cursor: grabbing;
+            user-select: none;
+            scroll-snap-type: none !important;
+        }
+        .contact-carousel .contact-list img {
+            -webkit-user-drag: none;
+            user-select: none;
+        }
+ 
+        .contact-carousel .contact-card {
+            flex: 0 0 85%;
+            max-width: none !important;
+            box-sizing: border-box;
+            scroll-snap-align: center;
+        }
+ 
+        .contact-carousel .contact-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            border-radius: 50%;
+            background: rgba(1, 4, 13, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .contact-carousel .contact-prev { left: 4px; }
+        .contact-carousel .contact-next { right: 4px; }
+        .contact-carousel .contact-arrow:disabled {
+            opacity: 0.25;
+            cursor: default;
+        }
+ 
+        .contact-carousel .contact-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+</style>
+ 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const root = document.querySelector('.contact-carousel');
+        if (!root) return;
+ 
+        const list = root.querySelector('.contact-list');
+        const cards = Array.from(list.querySelectorAll('.contact-card'));
+        const prevBtn = root.querySelector('.contact-prev');
+        const nextBtn = root.querySelector('.contact-next');
+        const dotsContainer = root.querySelector('.contact-dots');
+        const mobileQuery = window.matchMedia('(max-width: 850px)');
+ 
+        function currentIndex() {
+            const center = list.scrollLeft + list.clientWidth / 2;
+            let index = 0;
+            let best = Infinity;
+            cards.forEach((card, i) => {
+                const distance = Math.abs(card.offsetLeft + card.offsetWidth / 2 - center);
+                if (distance < best) {
+                    best = distance;
+                    index = i;
+                }
+            });
+            return index;
+        }
+ 
+        function goTo(index) {
+            const card = cards[Math.max(0, Math.min(index, cards.length - 1))];
+            list.scrollTo({
+                left: card.offsetLeft - (list.clientWidth - card.offsetWidth) / 2,
+                behavior: 'smooth'
+            });
+        }
+ 
+        function updateState() {
+            const index = currentIndex();
+            prevBtn.disabled = index <= 0;
+            nextBtn.disabled = index >= cards.length - 1;
+            dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+                dot.classList.toggle('is-active', i === index);
+            });
+        }
+ 
+        cards.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.setAttribute('aria-label', 'Go to contact option ' + (i + 1));
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+ 
+        prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
+        nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
+ 
+        let scrollTimer;
+        list.addEventListener('scroll', function() {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(updateState, 50);
+        }, { passive: true });
+        window.addEventListener('resize', updateState);
+        mobileQuery.addEventListener('change', updateState);
+ 
+        /* Mouse drag-to-swipe (touch already swipes natively) */
+        let isDown = false;
+        let moved = false;
+        let justDragged = false;
+        let startX = 0;
+        let startScroll = 0;
+ 
+        list.addEventListener('pointerdown', function(e) {
+            if (e.pointerType !== 'mouse' || e.button !== 0 || !mobileQuery.matches) return;
+            isDown = true;
+            moved = false;
+            startX = e.clientX;
+            startScroll = list.scrollLeft;
+        });
+ 
+        window.addEventListener('pointermove', function(e) {
+            if (!isDown) return;
+            const dx = e.clientX - startX;
+            if (!moved && Math.abs(dx) > 5) {
+                moved = true;
+                list.classList.add('is-dragging');
+            }
+            if (moved) list.scrollLeft = startScroll - dx;
+        });
+ 
+        function endDrag() {
+            if (!isDown) return;
+            isDown = false;
+            if (!moved) return;
+            const index = currentIndex();
+            list.classList.remove('is-dragging');
+            goTo(index);
+            justDragged = true;
+            setTimeout(() => { justDragged = false; }, 0);
+        }
+        window.addEventListener('pointerup', endDrag);
+        window.addEventListener('pointercancel', endDrag);
+ 
+        list.addEventListener('click', function(e) {
+            if (justDragged) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }, true);
+        list.addEventListener('dragstart', e => e.preventDefault());
+ 
+        updateState();
+    });
+</script>

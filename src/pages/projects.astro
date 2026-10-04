@@ -6,7 +6,7 @@ import WoolxPic from '../assets/Updated_woolx.png';
 import codingNoBackground from '../assets/codingNoBackground.png';
 import tempDelve from '../assets/TempPicture.png';
 
-import { CodeXml, ShoppingBag, Gamepad2, Cpu, SquareArrowOutUpRight } from "lucide-astro";
+import { CodeXml, ShoppingBag, Gamepad2, Cpu, SquareArrowOutUpRight, ChevronLeft, ChevronRight } from "lucide-astro";
 ---
 
 
@@ -26,12 +26,35 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, SquareArrowOutUpRight } from "luci
     }
 </style>
 
+<!-- Global so it also styles the dots created by JS -->
+<style is:global>
+    .carousel-arrow,
+    .carousel-dots {
+        display: none;
+    }
+
+    .carousel-dots button {
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: #4b5563;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .carousel-dots button.is-active {
+        background: purple;
+        transform: scale(1.3);
+    }
+</style>
 
 
 <Layout>
     <main>
-        <div style="display:flex; justify-content: space-between; padding:40px; background:#01040d;">
-            <div style="width: 50%;">
+        <div class="projectHeader-Container" style="display:flex; justify-content: space-between; padding:40px; background:#01040d;">
+            <div>
                 <h2 style="margin: 0; color:white;">My Work</h2>
                 <h1 style="margin-top:5px; font-size:50px; margin: 0; color:white;">Projects</h1>
                 <p style="margin-top:10px; max-width:400px;  color:white;"> A collection of projects I've built or contributed to. From web applications to game development and embedded systems.</p>
@@ -39,9 +62,9 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, SquareArrowOutUpRight } from "luci
 
             <div style="display:flex;">
                 <div>
-                    <img src={codingNoBackground.src} width="300" height="200" alt="Coding Image" />
+                    <img class="ProjectHeader-Image1" src={codingNoBackground.src} width="300" height="200" alt="Coding Image" />
                 </div>
-                <div style="margin-left:60px; align-self: center; align-items: center; display:flex; flex-direction: column;">
+                <div class="icon-Container" style="margin-left:60px; align-self: center; align-items: center; display:flex; flex-direction: column;">
                     <div>
                         <ShoppingBag color="#10B981" size={48} />
                     </div>
@@ -67,82 +90,195 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, SquareArrowOutUpRight } from "luci
             <button id="game-development" style="cursor:pointer; color:white;">Game Development</button>
         </div>
 
-        <!-- All Projects list -->
-        <div style="display:flex; flex-wrap: wrap; gap:20px; padding:20px 0px;">
+        <div class="carousel-wrapper">
 
-            <div id="ecommerceProject" style="border-radius: 12px; max-width:500px; background:#0A101B; width:50%; display:flex; flex-direction:column;">
- 
-                <a href="http://localhost:4321/HanksBelts" style="text-decoration: unset; padding:10px; display:flex;">
-                    <div style="border-radius: 12px; width:100%;">
-                        <img style="border-radius: 12px; height:100%; width:100%;" src={HanksBeltsPic.src} width="100" height="100" alt="Hank's Belts" />
-                    </div>
-                    <div style="width:70%; padding:0px 20px;">
-                        <span style="font-size: 12px; padding: 5px; border-radius: 6px; background: purple; color: white; margin-bottom: 10px;">E-COMMERCE</span>
-                        <h2 style="color:white; margin:15px 0px 0px;">Hank's Belts</h2>
-                        <p style="color:white; margin-top:10px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
-                        <p style="color:white; margin-top:40px; font-size: 12px;">Shopify &#8226; Liquid &#8226; JavaScript</p>
-                    </div>
-                </a>
+            <button class="carousel-arrow carousel-prev" aria-label="Previous project">
+                <ChevronLeft color="white" size={24} />
+            </button>
+            <button class="carousel-arrow carousel-next" aria-label="Next project">
+                <ChevronRight color="white" size={24} />
+            </button>
 
-                <div style="border-top:1px solid grey;;">
-                    <a style="text-decoration: none; color:white; padding:10px; display:flex; align-items:center; gap:10px;" href="https://hanksbelts.com" target="_blank" rel="noopener noreferrer">
-                        <span>Live Site</span>
-                        <SquareArrowOutUpRight color="white" size={18} />
+            <!-- All Projects list -->
+            <div class="projects-list" style="min-height: 50vh; display:flex; flex-wrap: wrap; gap:20px; padding:20px 0px;">
+
+                <div class="project-card ecommerce-project" style="height:fit-content; border-radius: 12px; max-width:550px; background:#0A101B; display:flex; flex-direction:column;">
+     
+                    <a href="/HanksBelts" style="text-decoration: unset; padding:10px; display:flex;">
+                        <div style="border-radius: 12px; width:100%;">
+                            <img style="border-radius: 12px; height:100%; width:100%;" src={HanksBeltsPic.src} width="100" height="100" alt="Hank's Belts" />
+                        </div>
+                        <div style="width:70%; padding:0px 20px;">
+                            <span style="font-size: 12px; padding: 5px; border-radius: 6px; background: purple; color: white; margin-bottom: 10px;">E-COMMERCE</span>
+                            <h2 style="color:white; margin:15px 0px 0px;">Hank's Belts</h2>
+                            <p style="color:white; margin-top:10px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
+                            <p style="color:white; margin-top:40px; font-size: 12px;">Shopify &#8226; Liquid &#8226; JavaScript</p>
+                        </div>
                     </a>
+
+                    <div style="border-top:1px solid grey;">
+                        <a style="text-decoration: none; color:white; padding:10px; display:flex; align-items:center; gap:10px;" href="https://hanksbelts.com" target="_blank" rel="noopener noreferrer">
+                            <span>Live Site</span>
+                            <SquareArrowOutUpRight color="white" size={18} />
+                        </a>
+                    </div>
                 </div>
+
+                <div class="project-card ecommerce-project" style="height:fit-content; border-radius: 12px; max-width:550px; background:#0A101B; display:flex; flex-direction:column;">
+
+                    <a href="/Woolx" style="text-decoration:unset;  padding:10px; display:flex;">
+                        <div style="border-radius: 12px; width:100%;">
+                            <img style="border-radius: 12px; height:100%; width:100%;" src={WoolxPic.src} width="100" height="100" alt="Woolx" />
+                        </div>
+                        <div style="width:70%; padding:0px 20px;">
+                            <span style="font-size: 12px; padding: 5px; border-radius: 6px; background: purple; color: white; margin-bottom: 10px;">E-COMMERCE</span>
+                            <h2 style="color:white; margin:15px 0px 0px;">Woolx</h2>
+                            <p style="color:white; margin-top:10px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
+                            <p style="color:white; margin-top:40px; font-size: 12px;">Shopify &#8226; Liquid &#8226; JavaScript</p>
+                        </div>
+                    </a>
+
+                    <div style="border-top:1px solid grey;">
+                        <a style="text-decoration: none; color:white; padding:10px; display:flex; align-items:center; gap:10px;" href="https://www.woolx.com" target="_blank" rel="noopener noreferrer">
+                            <span>Live Site</span>
+                            <SquareArrowOutUpRight color="white" size={18} />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card game-project" style="height:fit-content; border-radius: 12px; max-width:550px; background:#0A101B; display:flex; flex-direction:column;">
+
+                    <div style=" padding:10px; display:flex;">
+                        <div style="border-radius: 12px; width:100%;">
+                            <img style="border-radius: 12px; height:100%; width:100%;" src={tempDelve.src} width="100" height="100" alt="Delve" />
+                        </div>
+                        <div style="width:70%; padding:0px 20px;">
+                            <span style="font-size: 12px; padding: 5px; border-radius: 6px; background: blue; color: white; margin-bottom: 10px;">Game Development</span>
+                            <h2 style="color:white; margin:15px 0px 0px;">Delve</h2>
+                            <p style="color:white; margin-top:10px;">A Multiplayer Dungeon Crawler game</p>
+                            <p style="color:white; margin-top:40px; font-size: 12px;">Unreal Engine 5 &#8226; Blueprints &#8226; C++</p>
+                        </div>
+                    </div>
+
+                    <div style="border-top:1px solid grey;">
+                        <!-- TODO: this still points at hanksbelts.com (copy-paste leftover) -->
+                        <a style="text-decoration: none; color:white; padding:10px; display:flex; align-items:center; gap:10px;" href="https://hanksbelts.com" target="_blank" rel="noopener noreferrer">
+                            <span>Live Site</span>
+                            <SquareArrowOutUpRight color="white" size={18} />
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
-            <div id="ecommerceProject" style="border-radius: 12px; max-width:500px; background:#0A101B; width:50%; display:flex; flex-direction:column;">
-
-                <a href="http://localhost:4321/Woolx" style="text-decoration:unset;  padding:10px; display:flex;">
-                    <div style="border-radius: 12px; width:100%;">
-                        <img style="border-radius: 12px; height:100%; width:100%;" src={WoolxPic.src} width="100" height="100" alt="Woolx" />
-                    </div>
-                    <div style="width:70%; padding:0px 20px;">
-                        <span style="font-size: 12px; padding: 5px; border-radius: 6px; background: purple; color: white; margin-bottom: 10px;">E-COMMERCE</span>
-                        <h2 style="color:white; margin:15px 0px 0px;">Woolx</h2>
-                        <p style="color:white; margin-top:10px;">Custom Shopify storefront with advanced discount logic and seamless UX.</p>
-                        <p style="color:white; margin-top:40px; font-size: 12px;">Shopify &#8226; Liquid &#8226; JavaScript</p>
-                    </div>
-                </a>
-
-                <div style="border-top:1px solid grey;;">
-                    <a style="text-decoration: none; color:white; padding:10px; display:flex; align-items:center; gap:10px;" href="https://www.woolx.com" target="_blank" rel="noopener noreferrer">
-                        <span>Live Site</span>
-                        <SquareArrowOutUpRight color="white" size={18} />
-                    </a>
-                </div>
-            </div>
-
-            <div id="gameDevelopmentProject" style="border-radius: 12px; max-width:500px; background:#0A101B; width:50%; display:flex; flex-direction:column;">
-
-                <div style=" padding:10px; display:flex;">
-                    <div style="border-radius: 12px; width:100%;">
-                        <img style="border-radius: 12px; height:100%; width:100%;" src={tempDelve.src} width="100" height="100" alt="Delve" />
-                    </div>
-                    <div style="width:70%; padding:0px 20px;">
-                        <span style="font-size: 12px; padding: 5px; border-radius: 6px; background: blue; color: white; margin-bottom: 10px;">Game Development</span>
-                        <h2 style="color:white; margin:15px 0px 0px;">Delve</h2>
-                        <p style="color:white; margin-top:10px;">A Multiplayer Dungeon Crawler game</p>
-                        <p style="color:white; margin-top:40px; font-size: 12px;">Unreal Engine 5 &#8226; Blueprints &#8226; C++</p>
-                    </div>
-                </div>
-
-                <div style="border-top:1px solid grey;;">
-                    <a style="text-decoration: none; color:white; padding:10px; display:flex; align-items:center; gap:10px;" href="https://hanksbelts.com" target="_blank" rel="noopener noreferrer">
-                        <span>Live Site</span>
-                        <SquareArrowOutUpRight color="white" size={18} />
-                    </a>
-                </div>
-            </div>
-
+            <div class="carousel-dots" aria-hidden="false"></div>
         </div>
-
-
-
 
     </div>
 </Layout>
+
+<style>
+    @media (max-width: 1040px){
+        .projectHeader-Container {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 650px){
+        .carousel-wrapper {
+            position: relative;
+        }
+
+        .projects-list {
+            position: relative;
+            flex-wrap: nowrap !important;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding-bottom: 20px !important;
+        }
+        .projects-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Mouse drag-to-swipe */
+        .projects-list {
+            cursor: grab;
+        }
+        .projects-list img {
+            -webkit-user-drag: none;
+            user-select: none;
+        }
+        .projects-list.is-dragging {
+            cursor: grabbing;
+            user-select: none;
+            scroll-snap-type: none !important; /* snapping fights the drag, so pause it */
+        }
+
+        .project-card {
+            flex: 0 0 85%;
+            max-width: none !important;
+            scroll-snap-align: center;
+        }
+
+        /* Stack image above text so the cards aren't cramped */
+        .project-card > :first-child {
+            flex-direction: column !important;
+        }
+        .project-card > :first-child > div {
+            width: 100% !important;
+            padding: 0 !important;
+        }
+        .project-card > :first-child > div + div {
+            padding-top: 10px !important;
+        }
+
+        /* Arrows */
+        .carousel-wrapper .carousel-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            border-radius: 50%;
+            background: rgba(1, 4, 13, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .carousel-wrapper .carousel-prev { left: 4px; }
+        .carousel-wrapper .carousel-next { right: 4px; }
+        .carousel-wrapper .carousel-arrow:disabled {
+            opacity: 0.25;
+            cursor: default;
+        }
+
+        /* Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 0 20px;
+        }
+    }
+
+    @media (max-width: 600px){
+        .ProjectHeader-Image1{
+            display:none;
+        }
+        .icon-Container{
+            margin-left:0px !important;
+        }
+    }
+    
+</style>
 
 <script>    
     document.addEventListener('DOMContentLoaded', function() {
@@ -150,32 +286,159 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, SquareArrowOutUpRight } from "luci
         const eCommerceButton = document.querySelector('#e-commerce');
         const gameDevelopmentButton = document.querySelector('#game-development');
 
-        const ecommerceProjects = document.querySelectorAll('#ecommerceProject');
-        const gameDevelopmentProjects = document.querySelectorAll('#gameDevelopmentProject');
-        
+        const ecommerceProjects = document.querySelectorAll('.ecommerce-project');
+        const gameDevelopmentProjects = document.querySelectorAll('.game-project');
+
+        /* ---------- Carousel ---------- */
+        const list = document.querySelector('.projects-list');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        const mobileQuery = window.matchMedia('(max-width: 650px)');
+
+        // Only cards that are currently shown (filters use display:none)
+        function visibleCards() {
+            return Array.from(list.querySelectorAll('.project-card'))
+                .filter(card => card.style.display !== 'none');
+        }
+
+        function currentIndex() {
+            const cards = visibleCards();
+            const center = list.scrollLeft + list.clientWidth / 2;
+            let index = 0;
+            let best = Infinity;
+            cards.forEach((card, i) => {
+                const distance = Math.abs(card.offsetLeft + card.offsetWidth / 2 - center);
+                if (distance < best) {
+                    best = distance;
+                    index = i;
+                }
+            });
+            return index;
+        }
+
+        function goTo(index) {
+            const cards = visibleCards();
+            const card = cards[Math.max(0, Math.min(index, cards.length - 1))];
+            if (!card) return;
+            list.scrollTo({
+                left: card.offsetLeft - (list.clientWidth - card.offsetWidth) / 2,
+                behavior: 'smooth'
+            });
+        }
+
+        function updateState() {
+            const cards = visibleCards();
+            const index = currentIndex();
+            prevBtn.disabled = index <= 0;
+            nextBtn.disabled = index >= cards.length - 1;
+            dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+                dot.classList.toggle('is-active', i === index);
+            });
+        }
+
+        function buildDots() {
+            dotsContainer.innerHTML = '';
+            visibleCards().forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.setAttribute('aria-label', 'Go to project ' + (i + 1));
+                dot.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(dot);
+            });
+            updateState();
+        }
+
+        function refreshCarousel() {
+            list.scrollTo({ left: 0 });
+            buildDots();
+        }
+
+        prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
+        nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
+
+        let scrollTimer;
+        list.addEventListener('scroll', function() {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(updateState, 50);
+        }, { passive: true });
+
+        /* ---------- Mouse drag-to-swipe (touch already swipes natively) ---------- */
+        let isDown = false;
+        let moved = false;
+        let justDragged = false;
+        let startX = 0;
+        let startScroll = 0;
+
+        list.addEventListener('pointerdown', function(e) {
+            if (e.pointerType !== 'mouse' || e.button !== 0 || !mobileQuery.matches) return;
+            isDown = true;
+            moved = false;
+            startX = e.clientX;
+            startScroll = list.scrollLeft;
+        });
+
+        window.addEventListener('pointermove', function(e) {
+            if (!isDown) return;
+            const dx = e.clientX - startX;
+            if (!moved && Math.abs(dx) > 5) {
+                moved = true;
+                list.classList.add('is-dragging');
+            }
+            if (moved) list.scrollLeft = startScroll - dx;
+        });
+
+        function endDrag() {
+            if (!isDown) return;
+            isDown = false;
+            if (!moved) return;
+            const index = currentIndex();      // work out the target before snapping comes back
+            list.classList.remove('is-dragging');
+            goTo(index);
+            justDragged = true;                // swallow the click that follows a drag
+            setTimeout(() => { justDragged = false; }, 0);
+        }
+        window.addEventListener('pointerup', endDrag);
+        window.addEventListener('pointercancel', endDrag);
+
+        list.addEventListener('click', function(e) {
+            if (justDragged) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }, true);
+
+        list.addEventListener('dragstart', e => e.preventDefault());
+
+        window.addEventListener('resize', updateState);
+        mobileQuery.addEventListener('change', updateState);
+
+        /* ---------- Filters ---------- */
         allProjectsButton.addEventListener('click', function() {
             allProjectsButton.classList.add('active');
             eCommerceButton.classList.remove('active');
             gameDevelopmentButton.classList.remove('active');
-            // Logic to show all projects
             ecommerceProjects.forEach(project => project.style.display = 'flex');
             gameDevelopmentProjects.forEach(project => project.style.display = 'flex');
+            refreshCarousel();
         });
         eCommerceButton.addEventListener('click', function() {
             allProjectsButton.classList.remove('active');
             eCommerceButton.classList.add('active');
             gameDevelopmentButton.classList.remove('active');
-            // Logic to show e-commerce projects
             ecommerceProjects.forEach(project => project.style.display = 'flex');
             gameDevelopmentProjects.forEach(project => project.style.display = 'none');
+            refreshCarousel();
         });
         gameDevelopmentButton.addEventListener('click', function() {
             allProjectsButton.classList.remove('active');
             eCommerceButton.classList.remove('active');
             gameDevelopmentButton.classList.add('active');
-            // Logic to show game development projects
             ecommerceProjects.forEach(project => project.style.display = 'none');
             gameDevelopmentProjects.forEach(project => project.style.display = 'flex');
+            refreshCarousel();
         });
+
+        buildDots();
     });
 </script>
