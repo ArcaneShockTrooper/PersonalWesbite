@@ -381,12 +381,26 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, ArrowRight, User, Mail } from "luc
 
 <style>
     .skills-outer {
-        border: 2px solid grey;
         background: #0A101B;
         color: white;
-        border-radius: 6px;
         padding: 20px 0px;
     }
+
+    @media (min-width: 970px){
+        .skills-outer {
+            border: 2px solid grey;
+            border-radius: 6px;
+        }
+    }
+
+    @media (max-width: 970px){
+        .skills-outer {
+            border-top: 2px solid grey;
+            border-bottom: 2px solid grey;
+            border-radius: 0px;
+        }
+    }
+
 	.skills-spacer {
 		flex-shrink: 0;
 		width: 1px; /* just enough to stop hard clipping at the last card's edge */

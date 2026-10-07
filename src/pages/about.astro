@@ -284,7 +284,7 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
    </div>
    
    <div style="padding:10px 40px; background-color: #01040d;">
-        <div style="align-items:center; justify-content: space-between; display:flex; border-radius: 6px; padding:20px; background-color: #0A101B;">
+        <div class="connectContainer" style="align-items:center; justify-content: space-between; display:flex; border-radius: 6px; padding:20px; background-color: #0A101B;">
             <div style="display:flex; ">
                 <Rocket color="#8B5CF6" size={40} />
                 <div style="margin-left: 20px; display:flex; flex-direction: column;">
@@ -579,6 +579,7 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
 </script>
 
 <style>
+    .connectContainer{}
     .career-button.is-hidden {
        color:#d5d5d55e;
        background-color: #4343436b;
@@ -642,7 +643,7 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
         transform: scale(1.3);
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 880px) {
         .career-container{
             overflow:hidden;
         }
