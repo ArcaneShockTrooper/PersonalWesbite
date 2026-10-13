@@ -24,7 +24,7 @@ import { Mail, GraduationCap, Clock, Image, FileText, Star, Calendar, CircleChec
 ---
 
 <Layout>
-    <div style=" padding:40px; background:#01040d; justify-content:space-between; display:flex;">
+    <div class="projectIntro_Container" style=" padding:40px; background:#01040d; justify-content:space-between; display:flex;">
         <div style="background:#01040d;">
             <h2 style="color:#8B5CF6; font-size: 25px; margin-top:40px; margin-bottom:0px;">E-COMMERCE</h2>
             <h1 style="color:white; margin:0px; margin-top:5px; font-size:50px;">Hank's Belts</h1>
@@ -66,8 +66,8 @@ import { Mail, GraduationCap, Clock, Image, FileText, Star, Calendar, CircleChec
 
     <div style="background:#01040d;">
         <div style="display:flex;  padding:40px;">
-            <div style="display:flex; border-radius:6px; background: #0A101B;">
-                <div style="margin:20px; border-right:2px solid #0f1828; max-width:50%;">
+            <div class="projectDetails" style="display:flex; padding:40px; border-radius:6px; background: #0A101B;">
+                <div class="projectDescription_container" style=" border-right:2px solid #0f1828; width:50%;">
                     <div style="display:flex; align-items:center; gap:10px;">
                         <FileText style="color:#8B5CF6; " size={40} />
                         <h2 style="color:white;">About The Project</h2>
@@ -77,7 +77,7 @@ import { Mail, GraduationCap, Clock, Image, FileText, Star, Calendar, CircleChec
                     <p style="margin-right:10px; line-height:25px; color:white;">HanksBelts is a shopift storefont built for a leather goods brand focused on quality and craftmanship. The goal was to create a clean, modern, and easy-to-use shopping experince tat highlights the product and brand story.</p>
                     <p style="line-height:25px; color:white;">I customized the the theme using Liquid, HTML, SCSS and JavaScript to build reusable sections, improve performance, and create a seamless experince across all devices.</p>
                 </div>
-                <div style=" padding:20px; width:50%;">
+                <div class="projectBulletPoints_Container" style="margin-left: 20px;  width:50%;">
                     <div style="display:flex; align-items:center; gap:10px;">
                         <CodeXml style="color:#8B5CF6; " size={40} />
                         <h2 style="color:white;">Technologies Used</h2>
@@ -91,40 +91,40 @@ import { Mail, GraduationCap, Clock, Image, FileText, Star, Calendar, CircleChec
                         <div style="height:20px; padding:10px; border-radius: 6px; background:#0f1828; color:white;">Git</div>
                     </div>
 
-                    <div style="border-top:2px solid #0f1828; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                    <div class="projectBulletPoints_Title" style="border-top:2px solid #0f1828; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
                         <Star  style="color:#8B5CF6; " size={30} />
                         <h2 style="color:white;">Key Features</h2>
                     </div>
                     
                     <div>
-                        <div style="display:grid; grid-template-columns: repeat(2, 1fr); flex-wrap: wrap; gap:10px;">
+                        <div class="projectBulletPoints" style="display:grid; grid-template-columns: repeat(2, 1fr); flex-wrap: wrap; gap:10px;">
                             <div style="height:40px; display:flex; align-items:center; gap:10px;">
-                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <CircleCheck style="min-width:20px; color:#8B5CF6; " size={20} />
                                 <h3 style="font-size:16px; color:white;">Custom Theme Design</h3>
                             </div>
 
                             <div style="height:40px; display:flex; align-items:center; gap:10px;">
-                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <CircleCheck style="min-width:20px; color:#8B5CF6; " size={20} />
                                 <h3 style="font-size:16px; color:white;">Responsive Design For All Devices</h3>
                             </div>
 
                             <div style="height:40px; display:flex; align-items:center; gap:10px;">
-                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <CircleCheck style="min-width:20px; color:#8B5CF6; " size={20} />
                                 <h3 style="font-size:16px; color:white;">Product Filtering And Collections</h3>
                             </div>
 
                             <div style="height:40px; display:flex; align-items:center; gap:10px;">
-                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <CircleCheck style="min-width:20px; color:#8B5CF6; " size={20} />
                                 <h3 style="font-size:16px; color:white;">Optimized Performance And Loading</h3>
                             </div>
 
                             <div style="height:40px;  display:flex; align-items:center; gap:10px;">
-                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <CircleCheck style="min-width:20px; color:#8B5CF6; " size={20} />
                                 <h3 style="font-size:16px; color:white;">Custom Product Page Sections</h3>
                             </div>
 
                             <div style="height:40px;  display:flex; align-items:center; gap:10px;">
-                                <CircleCheck style="color:#8B5CF6; " size={20} />
+                                <CircleCheck style="min-width:20px;color:#8B5CF6; " size={20} />
                                 <h3 style="font-size:16px; color:white;">Integrated Reviews and Testimonials</h3>
                             </div>
 
@@ -158,6 +158,31 @@ import { Mail, GraduationCap, Clock, Image, FileText, Star, Calendar, CircleChec
 </Layout>
 
 <style>
+    @media (max-width: 1124px) {
+        .projectDetails{
+            flex-direction:column;
+        }
+        .projectDescription_container{
+            width:100% !important;
+            border:none !important;
+        }
+        .projectBulletPoints_Container{
+            width:100% !important;
+            margin-left:0px !important;
+        }
+        .projectIntro_Container{
+            flex-direction:column;
+        }
+        
+    }
+
+    @media (max-width: 608px) {
+        .projectBulletPoints{
+            grid-template-columns: repeat(1, 1fr) !important;
+        }
+    }
+   
+
     .carousel-wrapper {
         position: relative;
         display: flex;
