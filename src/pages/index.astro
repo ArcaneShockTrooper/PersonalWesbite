@@ -300,30 +300,41 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, ArrowRight, User, Mail } from "luc
 
     if (row) {
         // --- drag to scroll, with velocity tracking for momentum ---
+        const DRAG_THRESHOLD = 5; // px of movement before a press counts as a drag
+
         let isDown = false;
         let didDrag = false;
+        let activePointerId = null;
         let startX = 0;
         let startScrollLeft = 0;
         let lastX = 0;
         let lastTime = 0;
         let velocity = 0;
 
-        const startDrag = (clientX) => {
+        const startDrag = (clientX, pointerId) => {
             cancelAnimationFrame(animationFrame);
             isDown = true;
             didDrag = false;
+            activePointerId = pointerId;
             startX = clientX;
             startScrollLeft = row.scrollLeft;
             lastX = clientX;
             lastTime = performance.now();
             velocity = 0;
-            row.classList.add('dragging');
         };
 
         const moveDrag = (clientX) => {
             if (!isDown) return;
             const delta = clientX - startX;
-            if (Math.abs(delta) > 3) didDrag = true;
+
+            // Only become a "real" drag once the pointer has moved past the threshold
+            if (!didDrag && Math.abs(delta) > DRAG_THRESHOLD) {
+                didDrag = true;
+                row.classList.add('dragging');
+                row.setPointerCapture(activePointerId); // capture now, not on press
+            }
+            if (!didDrag) return;
+
             row.scrollLeft = startScrollLeft - delta;
 
             const now = performance.now();
@@ -351,25 +362,25 @@ import { CodeXml, ShoppingBag, Gamepad2, Cpu, ArrowRight, User, Mail } from "luc
             }
 
             goToIndex(targetIndex);
+
+            // The click that follows a drag fires right after pointerup;
+            // reset afterwards so later clicks (and keyboard activation) work
+            setTimeout(() => { didDrag = false; }, 0);
         };
 
         row.addEventListener('pointerdown', (e) => {
-            e.preventDefault();
-            row.setPointerCapture(e.pointerId);
-            startDrag(e.clientX);
+            if (e.pointerType === 'mouse' && e.button !== 0) return;
+            startDrag(e.clientX, e.pointerId);   // no preventDefault, no capture here
         });
 
-        row.addEventListener('pointermove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            moveDrag(e.clientX);
-        });
+        row.addEventListener('pointermove', (e) => moveDrag(e.clientX));
 
         row.addEventListener('pointerup', endDrag);
         row.addEventListener('pointercancel', endDrag);
         row.addEventListener('pointerleave', endDrag);
         row.addEventListener('dragstart', (e) => e.preventDefault());
 
+        // Swallow the click only if the press turned into a drag
         row.addEventListener('click', (e) => {
             if (didDrag) {
                 e.preventDefault();
