@@ -20,7 +20,7 @@ import RTF_Pic from '../assets/rtf.png';
 import linkedInIcon from '../assets/linkedin.png';
 import githubIcon from '../assets/github.png';
 
-import { Mail, GraduationCap, Clock, Image, FileText, Star, Calendar, CircleCheck, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, Rocket, Gamepad2, Trophy, User, ShoppingBag, Cpu } from "lucide-astro";
+import { Mail, X, GraduationCap, Clock, Image, FileText, Star, Calendar, CircleCheck, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, Rocket, Gamepad2, Trophy, User, ShoppingBag, Cpu } from "lucide-astro";
 ---
 
 <Layout>
@@ -147,17 +147,76 @@ import { Mail, GraduationCap, Clock, Image, FileText, Star, Calendar, CircleChec
                 <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
 
                 <div class="carousel-track">
-                    <img class="carousel-img" src={HanksCollectionPic.src} alt="Collection page" />
-                    <img class="carousel-img" src={HanksHomepagePic.src} alt="Homepage" />
-                    <img class="carousel-img" src={HanksJournalPic.src} alt="Journal page" />
-                    <img class="carousel-img" src={HanksPDPPic.src} alt="Product detail page" />
+                    <img style="cursor:pointer;" id="HanksCollection_img" class="carousel-img" src={HanksCollectionPic.src} alt="Collection page" />
+                    <img style="cursor:pointer;" id="HanksHomepage_img" class="carousel-img" src={HanksHomepagePic.src} alt="Homepage" />
+                    <img style="cursor:pointer;" id="HanksJournal_img" class="carousel-img" src={HanksJournalPic.src} alt="Journal page" />
+                    <img style="cursor:pointer;" id="HanksPDP_img" class="carousel-img" src={HanksPDPPic.src} alt="Product detail page" />
                 </div>
 
                 <button class="carousel-btn next" aria-label="Next">&#10095;</button>
             </div>
         </div>
     </div>
+
+    <div id="hanksPopup" style="display:none; background:#000000a6; width:100%; height:100%; align-content: center; text-align: center; position:fixed; left:50%; top:50%; justify-self:center; transform: translate(-50%, -50%);">
+        <X style="cursor:pointer; position:absolute; top:10px; right:10px; margin-bottom:5px; color:#ffffff; " size={30} />
+        <img id="hanks_CollectionPage" style="display:none; height:500px; width:100%; object-fit:contain;" src={HanksCollectionPic.src} alt="Collection page" />
+        <img id="hanks_Homepage" style="display:none; height:500px; width:100%; object-fit:contain;" src={HanksHomepagePic.src} alt="Homepage" />
+        <img id="hanks_JournalPage" style="display:none; height:500px; width:100%; object-fit:contain;" src={HanksJournalPic.src} alt="Journal page" />
+        <img id="hanks_PDPPage" style="display:none; height:500px; width:100%; object-fit:contain;" src={HanksPDPPic.src} alt="Product detail page" />
+    </div>
+
+
 </Layout>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const imagePopup = document.querySelector('#hanksPopup');
+        
+        const HanksCollection_img = document.querySelector('#HanksCollection_img');
+        const HanksHomepage_img = document.querySelector('#HanksHomepage_img');
+        const HanksJournal_img = document.querySelector('#HanksJournal_img');
+        const HanksPDPPic_img = document.querySelector('#HanksPDP_img');
+
+        const hanks_CollectionPage = document.querySelector('#hanks_CollectionPage');
+        const hanks_Homepage = document.querySelector('#hanks_Homepage');
+        const hanks_JournalPage = document.querySelector('#hanks_JournalPage');
+        const hanks_PDPPage = document.querySelector('#hanks_PDPPage');
+
+
+        imagePopup?.addEventListener('click', () => {
+            imagePopup.style.display = 'none';
+            hanks_CollectionPage.style.display = 'none';
+            hanks_Homepage.style.display = 'none'; 
+            hanks_JournalPage.style.display = 'none';
+            hanks_PDPPage.style.display = 'none';
+        });
+
+        HanksCollection_img?.addEventListener('click', () => {
+            imagePopup.style.display = 'block';
+            hanks_CollectionPage.style.display = 'block';
+        });
+
+        HanksHomepage_img?.addEventListener('click', () => {
+            imagePopup.style.display = 'block';
+            hanks_Homepage.style.display = 'block';
+        });
+
+        HanksJournal_img?.addEventListener('click', () => {
+            imagePopup.style.display = 'block';
+            hanks_JournalPage.style.display = 'block';
+        });
+
+        HanksPDPPic_img?.addEventListener('click', () => {
+            imagePopup.style.display = 'block';
+            hanks_PDPPage.style.display = 'block';
+        });
+
+    });
+</script>
+
+
 
 <style>
 
@@ -236,7 +295,6 @@ import { Mail, GraduationCap, Clock, Image, FileText, Star, Calendar, CircleChec
         height: 36px;
         cursor: pointer;
         font-size: 14px;
-        z-index: 1;
     }
     .carousel-btn:hover {
         background: #8B5CF6;

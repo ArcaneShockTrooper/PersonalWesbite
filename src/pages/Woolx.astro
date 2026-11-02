@@ -147,10 +147,10 @@ import { Mail, X, Clock, GraduationCap, Image, FileText, Star, Calendar, CircleC
                 <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
 
                 <div class="carousel-track">
-                    <img class="carousel-img" src={WoolxCollectionPic.src} alt="Collection page" />
-                    <img class="carousel-img" src={WoolxHomepagePic.src} alt="Homepage" />
-                    <img class="carousel-img" src={WoolxJournalPic.src} alt="Journal page" />
-                    <img class="carousel-img" src={WoolxPDPPic.src} alt="Product detail page" />
+                    <img style="cursor:pointer;" id="WoolxCollection_img" class="carousel-img" src={WoolxCollectionPic.src} alt="Collection page" />
+                    <img style="cursor:pointer;" id="WoolxHomepage_img" class="carousel-img" src={WoolxHomepagePic.src} alt="Homepage" />
+                    <img style="cursor:pointer;" id="WoolxJournal_img" class="carousel-img" src={WoolxJournalPic.src} alt="Journal page" />
+                    <img style="cursor:pointer;" id="WoolxPDP_img" class="carousel-img" src={WoolxPDPPic.src} alt="Product detail page" />
                 </div>
 
                 <button class="carousel-btn next" aria-label="Next">&#10095;</button>
@@ -158,12 +158,12 @@ import { Mail, X, Clock, GraduationCap, Image, FileText, Star, Calendar, CircleC
         </div>
     </div>
 
-    <div id="woolxPopup_1" style="background:#000000a6; width:100%; height:100%; align-content: center; text-align: center; position:fixed; left:50%; top:50%; justify-self:center; transform: translate(-50%, -50%);">
-        <X style="cursor:pointer; position:absolute; top:0px; right:0px; margin-bottom:5px; color:#ffffff; " size={30} />
-        <img style="height:500px; width:80%; object-fit:contain;" src={WoolxCollectionPic.src} alt="Collection page" />
-        <img style="display:none; height:500px; width:80%; object-fit:contain;" src={WoolxHomepagePic.src} alt="Homepage" />
-        <img style="display:none; height:500px; width:80%; object-fit:contain;" src={WoolxJournalPic.src} alt="Journal page" />
-        <img style="display:none; height:500px; width:80%; object-fit:contain;" src={WoolxPDPPic.src} alt="Product detail page" />
+    <div id="woolxPopup" style="display:none; background:#000000a6; width:100%; height:100%; align-content: center; text-align: center; position:fixed; left:50%; top:50%; justify-self:center; transform: translate(-50%, -50%);">
+        <X style="cursor:pointer; position:absolute; top:10px; right:10px; margin-bottom:5px; color:#ffffff; " size={30} />
+        <img id="woolx_CollectionPage" style="display:none; height:500px; width:100%; object-fit:contain;" src={WoolxCollectionPic.src} alt="Collection page" />
+        <img id="woolx_Homepage" style="display:none; height:500px; width:100%; object-fit:contain;" src={WoolxHomepagePic.src} alt="Homepage" />
+        <img id="woolx_JournalPage" style="display:none; height:500px; width:100%; object-fit:contain;" src={WoolxJournalPic.src} alt="Journal page" />
+        <img id="woolx_PDPPage" style="display:none; height:500px; width:100%; object-fit:contain;" src={WoolxPDPPic.src} alt="Product detail page" />
     </div>
 
 
@@ -173,10 +173,47 @@ import { Mail, X, Clock, GraduationCap, Image, FileText, Star, Calendar, CircleC
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const imagePopup = document.querySelector('#woolxPopup_1');
+        const imagePopup = document.querySelector('#woolxPopup');
+        
+        const WoolxCollection_img = document.querySelector('#WoolxCollection_img');
+        const WoolxHomepage_img = document.querySelector('#WoolxHomepage_img');
+        const WoolxJournal_img = document.querySelector('#WoolxJournal_img');
+        const WoolxPDPPic_img = document.querySelector('#WoolxPDP_img');
+
+        const woolx_CollectionPage = document.querySelector('#woolx_CollectionPage');
+        const woolx_Homepage = document.querySelector('#woolx_Homepage');
+        const woolx_JournalPage = document.querySelector('#woolx_JournalPage');
+        const woolx_PDPPage = document.querySelector('#woolx_PDPPage');
+
+
         imagePopup?.addEventListener('click', () => {
             imagePopup.style.display = 'none';
+            woolx_CollectionPage.style.display = 'none';
+            woolx_Homepage.style.display = 'none'; 
+            woolx_JournalPage.style.display = 'none';
+            woolx_PDPPage.style.display = 'none';
         });
+
+        WoolxCollection_img?.addEventListener('click', () => {
+            imagePopup.style.display = 'block';
+            woolx_CollectionPage.style.display = 'block';
+        });
+
+        WoolxHomepage_img?.addEventListener('click', () => {
+            imagePopup.style.display = 'block';
+            woolx_Homepage.style.display = 'block';
+        });
+
+        WoolxJournal_img?.addEventListener('click', () => {
+            imagePopup.style.display = 'block';
+            woolx_JournalPage.style.display = 'block';
+        });
+
+        WoolxPDPPic_img?.addEventListener('click', () => {
+            imagePopup.style.display = 'block';
+            woolx_PDPPage.style.display = 'block';
+        });
+
     });
 </script>
 
