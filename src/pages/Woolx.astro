@@ -158,7 +158,7 @@ import { Mail, X, Clock, GraduationCap, Image, FileText, Star, Calendar, CircleC
         </div>
     </div>
 
-    <div id="woolxPopup" style="background:#000000a6; width:100%; height:100%; align-content: center; text-align: center; position:fixed; left:50%; top:50%; justify-self:center; transform: translate(-50%, -50%);">
+    <div id="woolxPopup_1" style="background:#000000a6; width:100%; height:100%; align-content: center; text-align: center; position:fixed; left:50%; top:50%; justify-self:center; transform: translate(-50%, -50%);">
         <X style="cursor:pointer; position:absolute; top:0px; right:0px; margin-bottom:5px; color:#ffffff; " size={30} />
         <img style="height:500px; width:80%; object-fit:contain;" src={WoolxCollectionPic.src} alt="Collection page" />
         <img style="display:none; height:500px; width:80%; object-fit:contain;" src={WoolxHomepagePic.src} alt="Homepage" />
@@ -166,12 +166,14 @@ import { Mail, X, Clock, GraduationCap, Image, FileText, Star, Calendar, CircleC
         <img style="display:none; height:500px; width:80%; object-fit:contain;" src={WoolxPDPPic.src} alt="Product detail page" />
     </div>
 
+
+
 </Layout>
 
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const imagePopup = document.querySelector('#woolxPopup');
+        const imagePopup = document.querySelector('#woolxPopup_1');
         imagePopup?.addEventListener('click', () => {
             imagePopup.style.display = 'none';
         });
