@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
-import TempProfilePic from '../assets/TempProfilePic.png';
+import TempProfilePic from '../assets/NoBackground_ResumePhoto.png';
 import HTML_Pic from '../assets/html.png';
 import CSS_Pic from '../assets/css_blue.png';
 import Liquid_Pic from '../assets/liquid.png';
@@ -63,7 +63,7 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
             </div>
         </div>
 
-        <div>
+        <div class="ProfilePicture" style="align-content:flex-end;">
             <img src={TempProfilePic.src} width="100%" height="350px" alt="Temp Profile Pic" />
         </div>
    </div>
@@ -241,8 +241,8 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
                     <div class="career-item">
                         <Folder style="color:#8B5CF6; margin-right: 10px;" size={40} />
                         <div style="display:flex; flex-direction: column;">
-                            <span style="font-size: 24px; color:white;">20+</span>
-                            <span style="color:white;">Projects Completed</span>
+                            <span style="font-size: 24px; color:white;">100+</span>
+                            <span style="color:white;">Features Delivered</span>
                         </div>
                     </div>
                     <div class="career-item">
@@ -579,6 +579,16 @@ import { Mail, Calendar, MapPinHouse, Folder,  ArrowRight, CodeXml, Lightbulb, R
 </script>
 
 <style>
+    @media (max-width: 900px) {
+        .ProfilePicture{
+            display:none;
+        }
+    }
+
+    .ProfilePicture{
+        align-content: flex-end;
+    }
+    
     @media (max-width: 791px) {
         .connectContainer{
             flex-direction: column;
